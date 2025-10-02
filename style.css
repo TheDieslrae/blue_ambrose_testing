@@ -17,7 +17,12 @@ body {
 	font-family: tahoma, helvetica, sans-serif;
 	font-size: 8pt;
 	color: #e1ecf1;
-	min-width: 850px;}
+	min-width: 850px;
+/*Dieslrae - addition for fix #3: "Blue Ambrose places line breaks within words" by weser */ 
+	white-space: normal;
+	word-break: normal;
+	overflow-wrap: normal;
+}
 #wrapper {											/*General content box on all pages*/
 	position: relative;
 	padding-bottom: 300px;							/*Distance between bottom of content and footer*/
@@ -5285,8 +5290,9 @@ td.calendar-day-np {
 
  iframe {max-width: 100%;}
 
-td a { word-break: break-all;}
-td a { word-break: break-all;}
+/*Dieslrae - subtraction for fix #3: "Blue Ambrose places line breaks within words" by weser */ 
+/*td a { word-break: break-all;}
+td a { word-break: break-all;}*/
 
 
 /*** Tag adding form ***/
