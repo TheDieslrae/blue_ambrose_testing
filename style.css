@@ -1182,7 +1182,7 @@ table.forum_index {											/* Sets background of main forum page */
 .last_read {
 	width: 15px;
 	height: 15px;
-	background: url(images/go_last_read.png) no-repeat center center;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/go_last_read.png') no-repeat center center;
 	margin-left: 5px;
 	margin-left: 5px;}
 .last_read a {
@@ -4368,7 +4368,7 @@ margin-bottom: 50px;}
 	opacity: 1;
 	position: relative;
 	top: -102px;
-	background: url(images/soldout.png) no-repeat;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/soldout.png') no-repeat;
 	background-size: contain;
 	padding: 10px;
 	height: 130px;
@@ -4391,7 +4391,7 @@ margin-bottom: 50px;}
 	opacity: 1;
 	position: relative;
 	top: -102px;
-	background: url(images/soldout.png) no-repeat;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/soldout.png') no-repeat;
 	background-size: contain;
 	padding: 10px;
 	height: 130px;
@@ -4414,7 +4414,7 @@ marquee {width: 100px;}
 /* Stickies */
 .sticky #groupplatform:before {
 	content: "";
-	background-image: url(images/icons/sticky1.png);
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/sticky1.png');
 	background-size: cover;
 	height: 14px;
 	width: 15px;
