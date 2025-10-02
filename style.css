@@ -5321,9 +5321,10 @@ form#tag_add_form input[type="submit"] {
 /*Dieslrae - addition for fix #1: "Tags group is bunched up after tag system overhaul update" by Sturm */ 
 #group_tags .tag_type_header {
     font-weight: bold; /* Makes tag headers bold for easier readability */
+	margin-left: 2px;
 }
 
 #group_tags .group_tag {
     margin: 2px 0; /* Adds spacing between tags to improve usability */
-	margin-left: 1px;
+	margin-left: 2px;
 }
