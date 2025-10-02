@@ -1,0 +1,5322 @@
+@import url(https://gazellegames.net/static/styles/game_room/caticons.css);
+@import url(https://gazellegames.net/static/styles/game_room/webLinks.css);
+
+/* ************************** */
+/* **********Global********** */
+/* ************************** */
+* {
+    padding: 0em;
+    margin: 0em;}
+html {
+    width: 100%;
+	height: 100%;}
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #0E1720;						/*Background color (very dark blue)*/
+	font-family: tahoma, helvetica, sans-serif;
+	font-size: 8pt;
+	color: #e1ecf1;
+	min-width: 850px;}
+#wrapper {											/*General content box on all pages*/
+	position: relative;
+	padding-bottom: 300px;							/*Distance between bottom of content and footer*/
+	height: auto !important;
+	min-height: 100%;
+	height: 100%;}
+
+h2 {												/*Header at top of most pages (wiki, requests, etc*/
+	height:48px;
+	line-height:48px;
+	color:#7FB7D3;									/*Light blue*/
+	padding-left:15px;
+	border-bottom:solid 2px #314f6d;}				/*Medium blue bottom border*/
+
+h3#irc, h3#general, h3#jump, h3#forums {padding:10px;}
+h3#general {margin-top: 0; padding-top: 20px; pa}
+
+ol {margin-left: 25px;}
+
+input, button {												/*Input boxes (search, torrent search, etc.)*/
+	background:url("https://gazellegames.net/static/styles/blue_ambrose/images/BlueGradBtn.png") repeat-x scroll;
+	border:1px solid #999999;
+	color:#FDFDFD;
+	padding:2px 3px;}
+input:hover, button:hover {
+	border:1px solid #fff;}
+
+a {													/*Link colors*/
+	color:#7FB7D3;									/*Default link color (light blue)*/
+	text-decoration:none;}
+a:hover {											/*Default link on hover (ligher blue)*/
+	color: #c7d6f1;
+	text-decoration: underline;
+	position: relative;
+	top: 1px;										/*Shift up/left slightly*/
+	left: 1px;}
+a:active {
+	color: #fff;									/*Default link on click (white)*/
+	text-decoration:underline;}
+
+.bold {font-weight: bold;}
+.italic { font-style: italic; }
+
+table {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-collapse: collapse;
+    border-color: -moz-use-text-color #003 #003 -moz-use-text-color;
+    border-image: none;
+    border-right: 1px solid #003;
+    border-style: hidden solid solid hidden;
+    border-width: medium 1px 1px medium;
+    width: 100%;
+	background:url("https://gazellegames.net/static/styles/blue_ambrose/images/companioncube-blue.png");
+	border-left: 1px solid #036;}
+table.border {border: 1px solid #355676;}
+table.border td {
+    background-color: #0F3050;
+    border: 1px solid #355676;}
+table.border td.label {
+    background-color: #426D93;}
+table.slice {margin-top:-1px;}
+td.label {text-align:right;}
+
+td.body {
+	background-color: rgba(27, 46, 64, 1);}
+td.label {
+    background-color: #426D93;
+    color: #FFFFFF;
+    padding-right: 5px;}
+td {
+    border: 1px solid #036;
+    padding: 5px;
+    text-align: left;}
+td.sign a {
+	border:hidden;}
+td.colhead, .colhead td {
+	padding-left:10px;
+	padding-right:10px;}
+
+tr {
+    background-color: transparent;
+    color: #FFFFFF;}
+tr a {
+	color:#fff;
+	font-weight:bold;}
+tr a:hover {
+	color: #c7d6f1;
+	text-decoration:underline;}
+
+.colhead, .colhead_dark {
+    background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent;
+    color: #FFFFFF;
+	font-size:7ipt;
+    font-weight: 700;
+    height: 25px;
+    padding-top: 10px;
+    white-space: nowrap;
+	background-size: auto 100%;}
+.colhead_dark a {
+	color: white;
+	border-bottom: hidden;}
+
+#header {
+	width: 100%;
+	height: 420px;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/HeaderBG.png') repeat-x;}
+#header .sub {
+    height: 1px;
+    left: 50px;
+    overflow: visible;
+    position: relative;
+    top: 20px;
+    visibility: hidden;
+    width: 61%;
+	z-index: 999;}
+#header .sub span{
+	background:url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 50% transparent;
+	border: 1px solid #003;
+	display:block;
+	padding:5px;}
+#header .sub a{
+	color: #fff;}
+
+#content {
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;}
+
+.thin {
+	width: 1000px;
+	margin: 0 auto;}
+
+strong.newnoti {
+	color:#C7EB00;}
+
+#header #alerts {
+	position:absolute;
+	left:0;
+	right:0;
+	margin:0 auto;
+	width:984px;
+	text-align:center;
+	top:293px;
+	color:#FFF;}
+
+#header #alerts .alertbar a {
+	color:#CCC;
+	text-decoration:underline;}
+
+#announcement {
+        position:absolute;
+        padding: 1px;
+        left:0;
+        right:0;
+        margin:0 auto;
+        width:976px;
+        text-align:center;
+        top:198px;
+        color:#FFF;
+	background-color: rgba(40, 96, 155, 0.8);
+        border: 1px solid rgb(40, 96, 155);
+        border-radius: 3px;
+        box-shadow: 1px 1px 4px #000000;
+        font-weight: bold;
+        font-size: 1.4em;
+}
+
+.global_buffs {
+	margin-top: 33px;
+	font-family: tahoma, helvetica, sans-serif;
+    left: 50%;
+	margin-left: -500px;}
+
+.clan_trophy {
+	margin-top: 85px;
+	right: 51.5%;
+	margin-right: -500px;}
+
+.clan_trophy img {height: 150px;}
+
+.fa.fa-fl-pots {font-family: tahoma, helvetica, sans-serif;}
+
+.min_padding {padding: 0;}
+.label {width: 15%;}
+
+.main_column table {
+    margin: 0 auto;
+    width: 95%;}
+
+.r00 {color: #FF0000;}								/*Ratio Colors*/
+.r01 {color: #FF1300;}
+.r02 {color: #FF1300;}
+.r03 {color: #FF2600;}
+.r04 {color: #FF4C00;}
+.r05 {color: #FF5E00;}
+.r06 {color: #FF5E00;}
+.r07 {color: #FF7100;}
+.r08 {color: #FF9700;}
+.r09 {color: #FFAA00;}
+.r10, .r20, .r50, .r99 {color: #c7eb00;}
+
+.hidden, .hide{display:none}
+.nobr{white-space:nowrap;}
+
+blockquote {
+	border:solid #2c4b66 1px;
+	background-color:#193148;
+	color:#fff;margin-top:5px;
+	padding:10px;}
+
+pre {
+	background-color:#426d93;
+	border:1px dashed #2c4b66;
+	padding:10px;
+	color:#fff;}
+
+pre, blockquote {width: 90%;}
+
+#left_poll {
+	width: 5px;
+	height: 11px;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/PollLeft.png') no-repeat center center;
+	float: left;
+	margin: 0px;
+	padding: 0px;}
+#center_poll {
+	height: 11px;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/PollBar.png') repeat;
+	float: left;
+	margin: 0px;
+	padding: 0px;}
+#right_poll {
+	width: 5px;
+	height: 11px;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/PollRight.png') no-repeat center center;
+	float: left;
+	margin: 0px;
+	padding: 0px;}
+
+.curtain {
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: #0E1720;
+	z-index:1001;
+	-moz-opacity: 0.7;
+	opacity:.70;
+	/*filter: alpha(opacity=70);*/}
+
+.lightbox {
+	position: fixed;
+	text-align: center;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	padding: 0px;
+	z-index:1002;
+	overflow: auto;}
+
+.lightbox img {
+	border: solid #E1ECF1 2px;
+	background-color:white;
+	max-height: 100%;
+	max-width: 98%}
+
+select.select_tog {width: 25%;}
+input.input_tog {width: 65%;}
+
+#polcont img {
+	width: auto;
+	border: none;
+	margin: 0;}
+
+.error_message {
+	border:1px solid #C92020;
+	background-color:#EDC2DB;
+	color:#C92020;
+	padding:3px 0;
+	text-align:center;
+	font-weight:700;}
+.save_message  {
+	background-color:#426d93;
+	border:1px solid #2c4b66;
+	color:#fff;
+	font-weight:700;
+	padding:3px 0;
+	text-align:center;}
+
+#stats #content .box {background-color #1d3145;}
+
+.slides_container {width: 207px;}
+
+.next {
+	margin-right: 1em;
+	margin-bottom: 1em;
+	width: 25px;
+	height: 25px;
+	float: right;
+	background: URL("https://gazellegames.net/static/styles/blue_ambrose/images/arrow_right.png") no-repeat;
+	border-bottom: none;}
+.prev {
+	margin-left: 1em;
+	margin-bottom: 1em;
+	width: 25px;
+	height: 25px;
+	float: left;
+	background: URL("https://gazellegames.net/static/styles/blue_ambrose/images/arrow_left.png") no-repeat;}
+
+div.linkbox {
+	text-align:center;
+	padding: 5px;
+	clear:both;}
+div.breadcrumbs {
+	float: right;}
+.center {text-align: center;}
+.right {text-align: right;}
+.flright {float:right;}
+.flleft {float:left;}
+.underline {text-decoration: underline;}
+
+.min_padding {
+	padding: 0px;
+	margin: 0px 0px;}
+
+p.min_padding {
+	margin: 2px 0px;}
+
+.pad {
+	padding:10px;}
+
+.vertical_space {
+	margin-bottom: 10px;}
+
+.box {
+	font-size: 8pt;
+	background-color:#1B2E40;}
+
+.pad h3, .pad h4, .padbox h3, .padbox h4 {
+	margin-top: 0px;
+	padding-top: 0px;}
+
+.body {padding: 3px 0px 10px 6px;}
+
+.hidden {display: none;}
+.nobullet {list-style: none;}
+h3 {margin:10px 0;}
+
+.sidebar .box a.next, .sidebar .box a.prev {border-bottom: none;}
+
+span.size5 img {float:right;}
+
+/* workaround for calendar display issue */
+div.sidebar #event_div {
+	margin-left: -52px;
+}
+
+/* *************************** */
+/* ********Search Bars******** */
+/* *************************** */
+
+#header #searchbars ul {							/*Width, etc. of overall search bar*/
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 4px;
+	text-align: center;
+	list-style: none;}
+#header #searchbars input {
+    background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/SearchBG.png");
+    border-style: hidden;
+    border-width: 0;
+    color: #CEF6FF;
+    height: 21px;
+    line-height: 25px;
+    padding-left: 7px;
+    padding-right: 7px;
+    width: 148px;
+    text-align: center;
+    border-radius: 15px;}
+#header #searchbars input:hover {
+    box-shadow: 0px 0px 5px #06c;}
+
+#header #searchbars ul li {							/*Drop down of search menu*/
+	display: inline-block;
+	position: relative;}
+#header #searchbars ul li ul {
+	position: absolute;
+	left: 0;
+	display: block;
+	width: 148px;
+	border: 1px solid #596976;
+	z-index: 1000;}
+#header #searchbars ul li ul li {
+	display: block;
+	background-color: #1b2e3f;
+	margin: 0;
+	padding: 5px 10px;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+	border-bottom: 1px solid #596976;}
+#header #searchbars ul li ul li:hover {				/*Hover of drop down search menu*/
+	display: block;
+	background-color: #314f6d;
+	margin: 0;
+	padding: 5px 10px;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+	border-bottom: 1px solid #596976;}
+
+/* ************************** */
+/* *******Site Logo********** */
+/* ************************** */
+
+#logo {
+	width: 964px;
+	height: 206px;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/Logo.png') no-repeat top left;
+	position: absolute;
+	top: 34px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	background-position:-43px;}
+#logo a {
+	width:960px;
+	height:203px;
+	display:block;
+	margin:0 auto;
+	position:relative;
+	top:1px;
+	left:0;
+	border-style:hidden;}
+
+/* ************************** */
+/* ******Main Menu Bar******* */
+/* ************************** */
+
+#menu {												/*Overall format of menubar*/
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	top: 237px;
+	width: 984px;}
+#menu ul {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavULBG.png');
+	height: 66px;
+	list-style: none;
+	text-align: center;}
+#menu ul li {display: inline;}
+#menu ul li div {display: none;}
+
+#menu ul .last a {									/*Hides last divider*/
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavLILast.png') no-repeat scroll right bottom transparent;}
+#menu ul .last a:hover {
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavLILast.png') no-repeat scroll right top transparent;
+	position: relative;
+	top: 0;
+	left: 0;}
+
+#menu ul li a {										/*Content and hover look*/
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavLI.png') no-repeat scroll right bottom transparent;
+	font-family: Helvetica, Arial, Sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	border-bottom: none;
+	display: inline-block;
+	height: 48px;
+	line-height: 57px;
+	width: 94px;}
+#menu ul li a:hover {
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavLI.png') no-repeat scroll right top transparent;
+	position: relative;
+	top: 0;
+	left: 0;}
+
+/* ************************** */
+/* ********User Bar********** */
+/* ************************** */
+
+#userinfo {
+	background:url("https://gazellegames.net/static/styles/blue_ambrose/images/UserBG.png") no-repeat scroll 0 0 transparent;
+	left:0;
+	margin:0 auto;
+	position:absolute;
+	right:0;
+	top:318px;
+	width:976px;
+	height: 87px;}
+
+#userinfo_username li.brackets {					/* Right-hand side (user name, donate, etc.)*/
+	margin-left:3px;}
+#userinfo #userinfo_username {
+	float:right;
+	list-style:none;
+	width:220px;
+	margin-top: 10px;}
+#userinfo #userinfo_username li {
+	float:left;}
+#userinfo #userinfo_username .welcome  {
+	color:#7FB7D3;
+	clear: both;
+	margin-right: 10px;}
+#userinfo #userinfo_username .donateico  {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat:no-repeat;
+	background-position:0px -158px;
+	padding-left:20px;
+	height:20px;
+	margin-top: 10px;}
+#userinfo #userinfo_username .donateico a:link  {
+	color:#7FB7D3;
+	line-height:16px;
+	border-bottom: none;
+	text-decoration: none;}
+#userinfo #userinfo_username .donateico a:hover  {
+	color:#a1d6f1;
+	text-decoration:underline;}
+#userinfo #userinfo_username .username {
+	color:#fff;
+	font-family:Arial;
+	text-decoration:none;}
+#userinfo #userinfo_username .username:hover {
+	color:#fff;
+	font-family:Arial;
+	text-decoration:underline;}
+#userinfo .brackets a {
+	color:#C7EB00;
+	font-family:Arial;
+	text-decoration:none;}
+#userinfo .brackets a:hover {
+	color:#C7EB00;
+	font-family:Arial;
+	text-decoration:underline;}
+
+#userinfo #userinfo_stats {							/*Left-hand side (Stats box)*/
+	float:left;
+	margin:15px 30px 0 20px;
+	display: block;
+	width:300px;}
+#userinfo #userinfo_stats li {
+	height:15px;
+	list-style:none outside none;
+	float:left;}
+#stats_seeding {
+	color:#C7EB00;
+	font-family:Arial;
+	width:160px;}
+#stats_leeching {
+	color:#C7EB00;
+	font-family:Arial;
+	clear:right;}
+#stats_gold {
+	color:#C7EB00;
+        font-family:Arial;
+	margin-top: 10px;
+	width: 160px;}
+#stats_ratio, #stats_share_score {
+	color:#7FB7D3;
+	font-family:Arial;
+	margin-top:10px;}
+#stats_share_score {
+	margin-left: 10px;}
+#stats_hnr {
+	color:#C7EB00;
+	font-family:Arial;}
+#online_irc {
+	padding-left: 10px;}
+#connectable {
+	color:#7FB7D3;
+	font-family:Arial;
+	clear:left;
+	width:160px;}
+#stats_irc {
+	color:#C7EB00;
+	font-family:Arial;
+	margin-top:10px;}
+#stats_seeding a:link, #stats_leeching a:link {
+	color:#7FB7D3;
+	font-family:Arial;
+	text-decoration: none;}
+#stats_seeding a:hover, #stats_leeching a:hover {
+	color: #a1d6f1;
+	text-decoration:underline;}
+
+#userinfo #userinfo_minor {									/*Middle links*/
+	display:inline-block;
+	list-style:none outside none;
+	width:400px;
+	margin-top: 10px;}
+#userinfo #userinfo_minor li {
+	display:inline;}
+#userinfo #userinfo_minor li a:link, #userinfo #userinfo_minor li a:visited {
+	display:inline-block;
+	margin-bottom: 8px;
+	line-height: 16px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	border-bottom: none;
+	width:100px;}
+#userinfo #userinfo_minor li a:hover {
+	color:#a1d6f1;
+	position: relative;
+	top:1px;
+	left:1px;}
+#userinfo #userinfo_minor .inboxico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px 2px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .torrentsico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -118px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .bookmarksico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -58px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .notificationsico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -179px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .postsico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -98px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .commentsico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -36px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .friendsico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -138px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .uploadico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -78px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .inviteico {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat: no-repeat;
+	background-position: 0px -18px;
+	padding-left: 20px;}
+#userinfo #userinfo_minor .staffico {
+    background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+    background-repeat: no-repeat;
+    background-position: 0px -297px;
+    padding-left: 20px;}
+#userinfo #userinfo_minor .inventoryico {
+    background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/inventory.png');
+    background-repeat: no-repeat;
+    padding-left: 20px;
+	background-size: 16px 16px;
+}
+#userinfo #userinfo_minor .top10ico {
+    background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/highscores.png');
+    background-repeat: no-repeat;
+    padding-left: 20px;
+	background-size: 16px 16px;
+}
+#userinfo #userinfo_minor .deltornotifsico {
+    background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/deleted_torrents.png');
+    background-repeat: no-repeat;
+    padding-left: 20px;
+	background-size: 16px 16px;
+}
+
+
+/* ************************** */
+/* **********Footer********** */
+/* ************************** */
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #cef6ff;
+	width: 100%;
+	height: 254px;
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/FooterBG.png');
+	background-repeat: repeat-x;}
+#footer_image {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/FooterRight.png');
+	height:250px;
+	width:536px;
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	z-index:0;}
+
+#disclaimer_container {
+	position: relative;
+	margin-left: 20px;
+	width: 550px;
+	font-size: 10px;
+	margin-bottom: 30px;
+	z-index: 1;}
+
+#footer #copyright {
+	position: relative;
+	font-family:Helvetica;
+	font-weight:700;
+	margin-left:20px;
+	z-index: 1;}
+
+#footer #server_stats {
+	font-family:Helvetica;
+	color:#d8ff00;
+	float:right;
+	bottom:5px;
+	position:absolute;
+	right:10px;
+	z-index: 1;}
+
+#footer #toplink {
+	position:absolute;
+	bottom:5px;
+	left:10px;}
+
+#footer a {
+	color:#BCDFEF;}
+#footer a:hover {
+	text-decoration:underline;}
+
+/* ************************** */
+/* ******Progress Bars******* */
+/* ************************** */
+
+#progress_bar {
+	margin: 5px auto;
+	padding: 5px;
+	width: 950px;
+	height: 11px;
+	background-color: #314F6D;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;}
+
+.large_progress_bar {
+	height: 20px;
+	width: 80%;
+	position: relative;
+	background: #314F6D;
+	border-radius: 25px;
+	padding: 5px;
+	margin: 5px auto;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+.large_progress_bar > span {
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+.large_progress_bar .main_bar {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: #d4f423;
+	background-image: linear-gradient(to bottom, #89a740, #d4f423, #698c11);
+	box-shadow:
+			inset 0 2px 9px  rgba(255,255,255,0.3),
+			inset 0 -2px 6px rgba(0,0,0,0.4);
+	position: relative;
+	z-index: 5;
+}
+.large_progress_bar .main_bar.complete {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+.large_progress_bar .main_bar { animation: expandWidth 2s; }
+
+@keyframes expandWidth {
+	0% { width: 0; }
+}
+
+/* ************************** */
+/* ********News Page********* */
+/* ************************** */
+
+.sidebar {
+	float: right;
+	width: 207px;
+	height: 100%;}
+
+.sidebar .box {
+	width: 207px;
+	background-color: #264059;
+	margin-bottom: 15px;
+	font-family: Arial, sans-serif;
+	color:#cef6ff;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;}
+
+.sidebar .box .head .pollhead {
+	padding: 0;
+	height: 25px;
+	list-style: none;}
+
+.sidebar .box .head .pollhead li {
+	display:inline;
+	background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png");
+	background-repeat:no-repeat;
+	background-position:left -200px;
+	line-height: 25px;
+	padding-left:20px;}
+
+.sidebar .box .head .statistics_head  {
+	height:25px;
+	list-style:none;
+	padding:0;}
+
+.sidebar .box .head .statistics_head li {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png');
+	background-repeat:no-repeat;
+	background-position:left -220px;
+	display:inline;
+	padding-left:20px;
+	line-height:25px;}
+
+.sidebar .box .head .staff_pick_head  {
+	height:25px;
+	list-style:none;
+	padding:0;}
+
+.sidebar .box .head .staff_pick_head li {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/rosette.png');
+	background-repeat:no-repeat;
+	display:inline;
+	padding-left:20px;
+	line-height:25px;}
+
+.sidebar .box #upcoming_calendar .day-label {
+	text-decoration: underline;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 5px 0;
+	display: block;}
+.sidebar .box .calendar li {list-style-type: none;}
+.sidebar .box .day-events li {padding: 5px;}
+.sidebar .box .day-events .event_end_time.brackets {
+	font-size: .9em;
+	font-style: italic;
+	padding-left: 3px;}
+.tooltipster-default .tooltipster-content {font-size: 12px !important;}
+
+#index #content .sidebar .colhead_dark  {padding-top:0;}
+
+#index .sidebar .box .staff_pick a {border-bottom:hidden;}
+#index .sidebar .box .staff_pick a:hover {top:0; left:0;}
+#index .sidebar .box .staff_pick li a {
+	color:#7FB7D3;
+	text-decoration:none;
+	border-bottom:dotted 1px #2c4b66;}
+#index .sidebar .box .staff_pick li a:hover {
+	color: #a1d6f1;
+	border-bottom:dotted 1px #CCC;
+	position: relative;
+	top: 1px;
+	left: 1px;}
+
+.sidebar .box .head, .sidebar .box .head a  {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/ColHead.png');
+	background-repeat: no-repeat;
+	text-align:center;
+	line-height:25px;
+	font-family:Arial;
+	font-size:12px;
+	color:#cef6ff;
+	text-decoration:none;
+	font-weight:bold;
+	-webkit-border-top-right-radius:8px;
+	-webkit-border-top-left-radius:8px;
+	-moz-border-radius-topright:8px;
+	-moz-border-radius-topleft:8px;}
+
+.sidebar .box ul {padding:1em;}
+.sidebar .box ol {padding:1em;}
+.sidebar .box a {
+	color:#CEF6FF;
+	text-decoration:none;
+	border-bottom:1px dotted #2c4b66;}
+.sidebar .box a:hover {border-bottom-color:#CCC;}
+
+.main_column .box .head {
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/MainHeader.png');
+	height: 48px;
+	width: 735px;
+	background-repeat: no-repeat;
+	line-height: 48px;
+	margin: 15px auto;}
+
+.main_column .box .head strong {
+	color:#bcdfef;
+	margin-left:15px;
+	line-height: 48px;
+	float: left;
+	font-size:12pt;
+	font-weight:bold;
+	font-family:Helvetica, Arial;
+	letter-spacing:1px;}
+
+.main_column .head .newsdate {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/DateBG.png');
+	background-repeat:no-repeat;
+	width:96px;
+	height:35px;
+	line-height:35px;
+	float: right;
+	margin: 5px;
+	color: #1C3247;
+	text-align: center;
+	font-weight: bolder;
+	font-family:Helvetica, Verdana, Arial;
+	font-size:10pt;}
+
+.main_column_bg, .main_column, #main_column_bottom, #main_column_top {
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;}
+
+.main_column_bg  {
+	background-color:#27415A;
+	width:762px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;}
+
+.main_column  {
+	float:left;
+	width:762px;
+	z-index:3;
+	position:relative;}
+
+#main_column_bottom  {
+	background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/MainBodyBottom.png");
+	height:272px;
+	width:762px;
+	z-index:2;
+	background-repeat:no-repeat;
+	position:absolute;
+	bottom: 0px;}
+
+#main_column_top  {
+	background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/MainBodyTop.png");
+	height:595px;
+	position:absolute;
+	width:762px;
+	z-index:2;
+	background-repeat:no-repeat;}
+
+.main_column .box, .main_column table {
+	margin-bottom: 10px;
+	background: none;}
+
+.main_column .box .pad {
+	color: #CEF6FF;
+	margin-left: 15px;
+	font-family: Helvetica, Verdana, Arial;
+	font-size: 9pt;}
+
+.main_column .box .pad ul {
+	margin-left: 27px;}
+
+.main_column .box .pad a {
+	color: #c7eb00;
+	text-decoration:none;}
+
+.main_column .box .pad a:hover {
+	color: #c7eb00;
+	text-decoration:underline}
+
+#index blockquote {background-color:#193148; color:#fff;}
+#index #content {width:984px;}
+#index .thin {width:984px;}
+h2 a.username  {color:#BCDFEF;}
+ul.stats li {padding-top: 5px;}
+ul.poll li {margin-bottom: 6px;}
+ul.poll li.graph {margin-bottom: 12px;	height: 11px;}
+#vanityhouse td {text-align: center;}
+#vanityhouse img {max-width: 170px;}
+
+#markread {											/*Code to mark new news items as read*/
+	background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/newscheckbox.png");
+	background-repeat: no-repeat;
+	border-bottom: medium none;
+	float: left;
+	height: 18px;
+	margin-left: 5px;
+	margin-top: 15px;
+	width: 18px;}
+.main_column .box .head#unread {					/*Probably related to new items*/
+	background-position: left bottom;}
+
+.sidebar .box {position:relative;}					/*Staff Picks box, etc.*/
+.sidebar .box p {padding:1em;}
+.sidebar img{
+	max-width:170px !important;
+	border:solid 1px #e1ecf1;
+	margin:10px;}
+
+#dailygazelle #gazelletitle {
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+}
+#dailygazelle img {
+        position: relative;
+        text-align: center;
+        top: 5%;
+        left: 5%;
+}
+
+/* ************************** */
+/* *********Forums*********** */
+/* ************************** */
+.avatar .forumstat {
+        max-height: 0;
+        -webkit-transition: max-height 0.1s ease-out;
+        -moz-transition: max-height 0.1s ease-out;
+        -o-transition: max-height 0.1s ease-out;
+        transition: max-height 0.1s ease-out;
+        overflow: hidden;
+}
+.avatar:hover .forumstat, td[id^=likers]>br {   /* Sets hover on avatar stats */
+        max-height: 500px;
+        -webkit-transition: max-height 0.3s ease-in 0.25s;
+        -moz-transition: max-height 0.3s ease-in 0.25s;
+        -o-transition: max-height 0.3s ease-in 0.25s;
+        transition: max-height 0.3s ease-in 0.25s;
+}
+
+
+tr.likes td {text-align: left !important;}					/*Left aligns the like/dislike text*/
+
+table.forum_index {											/* Sets background of main forum page */
+    background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube.png') repeat-y scroll bottom right !important;
+	ackground-size: 100% auto;
+    border: 1px solid #036;}
+
+#forums #content .thin table {								/*Background of forum sections*/
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png') repeat-y scroll bottom right;
+    border: 1px solid #036;}
+#forums #content .thin tr.rowa {background-color: transparent;}
+#forums #content .thin tr.rowb {background-color: transparent;}
+#forums .thin td {border: 1px solid #036;}
+
+.rowa td {background-color: rgba(27, 47, 63, 0.85);}	/*Sets transparency, etc. for forum index*/
+.rowb td {background-color: rgba(24, 59, 88, 0.85);}
+.rowa td a {color: #FFFFFF !important; font-weight:bold!important;}
+.rowa td a:hover {color:#c7d6f1 !important;
+	top: 1px;
+	left: 1px;
+	text-decoration:underline;
+	font-weight:bold!important}
+.rowb td a {color: #FFFFFF !important; font-weight:bold!important}
+.rowb td a:hover {color: #c7d6f1 !important;
+	top: 1px;
+	left: 1px;
+	text-decoration:underline;
+	font-weight:bold!important}
+
+#forums #content .box table td {background-color:rgba(24,59,88,0.85); border: none;}
+#forums #content .box table td.label {background-color:rgba(27, 47, 63, .85); border: none;}
+
+#forums #content #otherop td {						/* Latest Posts box with subforum selections */
+	text-align:left;
+	background-color: rgba(27, 47, 63, 0.75);}
+#forums #content #forumlist td {
+	text-align:left;
+	background-color: rgba(27, 47, 63, 0.75);}
+
+#forums table.forum_unread {border:solid #036 7px !important;}		/*Border around unread posts*/
+
+#forums td.body {text-align:left;}
+
+#forums td {
+	border: 1px solid #003 !important;
+	text-align:center;}
+
+#forums h3{margin:15px 0}
+#forums h3:first-child{margin:0 0 15px 0}
+#forums h4 {text-align:left;}
+#forums #content .thin h4 a {
+	color:#fff;
+	border-bottom:none;}
+#forums #content h4 a:hover {
+	border-bottom: dotted 1px #2c4b66;}
+
+.spoilerbox {
+    background-color: #224363;
+    border: 1px dotted #2C4B66;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;}
+
+#forums #content tbody td {
+	color:#fff;
+	border-bottom:none;}
+#forums #content tbody td a {
+	color:#c7d6f1;
+	font-weight:bold;
+	text-decoration:none;}
+#forums #content tbody td a:hover {
+	color:#c7d6f1;
+	text-decoration:underline;
+	top:1px;
+	right:1px;}
+
+#forums #content tbody td li a {
+	color:#c7d6f1;
+	font-weight:normal;
+	text-decoration:none;}
+
+#forums #content tbody td a.username:hover {
+	border-bottom:1px dotted #444;}
+
+#forums table.border .cat_list{
+	width:80%}
+#forums table.border .cat_list td{
+	width:20%;
+	padding:0 !important;
+	border:0 !important}
+
+#forums .user_title {
+     display: block;}
+
+#forums .username {
+     padding-right: 5px;}
+
+#forums .username_badges img {
+     max-height: 14px;
+     vertical-align: middle;
+     padding: 0 1px;
+     margin-top: -2px;}
+
+#forums .forum_post .colhead_dark div[style="float:left;"] input {
+     vertical-align: text-bottom;}
+
+.last_read {
+	width: 15px;
+	height: 15px;
+	background: url(images/go_last_read.png) no-repeat center center;
+	margin-left: 5px;
+	margin-left: 5px;}
+.last_read a {
+	border: none;
+	width: 100%;
+	height: 100%;
+	display: block;}
+.last_read a:hover {
+	border: none;}
+.sticky_post_label {
+	padding-left:10px;}
+.sticky_post {
+	border: 5px solid #233f59 !important;}
+.sticky_post tr {
+	 background-color: rgba(33, 59, 81, 0.9) !important;}
+
+.colhead_dark {
+	padding-left:5px;}
+
+#forums #content .thin td.read {
+	background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/balloon.png");
+	background-position:50%;
+	background-repeat:no-repeat;
+	height:18px;
+	width:18px;}
+#forums #content .thin td.unread{
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/balloon-unread.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width:18px;
+	height:18px}
+#forums #content .thin td.read_sticky{
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/sticky.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width:18px;
+	height:18px}
+#forums #content .thin td.unread_sticky{
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/sticky-unread.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width:18px;
+	height:18px}
+#forums #content .thin td.read_locked{
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/lock.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width:18px;
+	height:18px}
+#forums #content .thin td.unread_locked{
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/lock-unread.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width:18px;
+	height:18px}
+#forums #content .thin td.read_locked_sticky{
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/lock-sticky.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width:18px;
+	height:18px}
+#forums #content .thin td.unread_locked_sticky{
+	background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/lock-sticky-unread.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width:18px;
+	height:18px}
+
+#forums td.body {
+	background-color: transparent;
+	height: 100%;}
+
+.forum_post tr {
+	width:100%;
+	background-color:rgba(38, 63, 88, .85);
+	text-align:left !important;}
+
+.forumstat {
+	font-size:11px;
+	text-align:left;
+	margin:2px;
+	padding:2px;
+	border:1px #000 solid;
+	background-color:rgba(26, 42, 59, 1)}
+
+#forums table.border td {
+    background-color: rgba(38, 63, 88, .8);
+    border: 1px solid #355676;
+	text-align:left;}
+
+table td.avatar {
+	width:150px;
+	padding:0;}
+
+#forums #content .thin .vertical_margin {
+	margin-bottom: 20px;}
+
+#user .sidebar .colhead_dark {
+	padding:0;}
+
+#forums #content .forum_post ul {
+	margin-left:20px;}
+
+#forums #content .search {
+	width:75%;
+	margin: 20px auto;}
+#forums #content .search #otherop {
+	margin-bottom: -3px;}
+#forums #content .search table {
+	border: 2px solid #003;
+	margin-bottom: 6px;}
+#forums #content .search table td {
+	border:solid #003 1px;}
+#forums #content .search table tr {
+	background-color:#426d93;}
+#forums #content .search table tr td.label {
+	background-color:#426d93; opacity:0.1}
+#forums #content .search .submit {
+	text-align:right;
+	margin-right: 5px;}
+
+#forums #content .sub {
+	height:1px;
+	left:60px;
+	overflow:visible;
+	position:relative;
+	top:27px;
+	visibility:hidden;
+	width:10%;}
+#forums #content .sub span{
+	background:url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 50% transparent;
+	border: 1px solid #003;
+	display:block;
+	padding:5px;}
+#forums #content .sub a{
+	color: #fff;}
+
+#forums blockquote {
+	border:dashed #2c4b66 1px;
+	background-color:rgba(26, 42, 59, 1);
+	color:#fff;
+	margin-top:5px;
+	padding:10px;}
+
+.user_online {
+    background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/icons/user_online.png");
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    text-indent: -9999px;}
+.user_offline {
+    background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/icons/user_offline.png");
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+	text-indent: -9999px;}
+
+#forums #content table tr.colhead td {
+	background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent !important;
+	border: none;}
+
+#forums table td.body div {max-width:800px;}
+
+#forums .forum_signature td {
+	text-align: left;
+	padding: 4px 4px 4px 4px;
+	height: auto;}
+
+#forums .forum_signature td div {
+	padding: 0px 0px 2px 3px;
+        max-height: 75px;
+	overflow-y: auto;
+        overflow-x: hidden;}
+
+/*** Rules page ***/
+#forums .new_rule {
+	font-weight: 600;
+	color: goldenrod;
+}
+
+#forums .broken_rule {
+	font-weight: 600;
+	color: red;
+}
+
+/*** Participated ***/
+tr.participated >td:nth-child(2):before {
+  background-image: url('https://gazellegames.net/static/styles/game_room/images/icons/participated.svg');
+  content: '';
+  width: 12px;
+  height: 12px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 1px;
+  opacity: .5;}
+
+/* ************************** */
+/* ****User Profile Views**** */
+/* ************************** */
+
+#userhistory #content .thin table {
+	width: 800px;
+	margin: auto;
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png') repeat-y scroll bottom right;}
+#userhistory #content .thin table tr {
+	background-color:transparent;}
+
+#userhistory #content table td {
+	background-color:rgba(38, 63, 88, .85);
+	border: #003 solid 1px;}
+
+#userhistory #content table td.avatar {
+	background-color:rgba(38, 63, 88, .85);}
+
+/* ************************** */
+/* *****Torrents Browse****** */
+/* ************************** */
+
+#torrent_table {background: url("https://gazellegames.net/static/styles/blue_ambrose/images/mariobkg2.png") repeat-y scroll top center;}  /*Browse page background*/
+
+tr.group {background-color: rgba(27, 47, 63, 0.6);}									/*Game groups*/
+tr.group:hover {background-color: rgba(24, 59, 88, 0.8);}
+
+.torrent {background-color: rgba(27, 47, 63, 0.6);}									/*Non-game groups*/
+.torrent:hover {background: rgba(24, 59, 88, 0.8);}
+
+.torrent_table tr.group_torrent{background-color: rgba(24, 59, 88, 0.6);}			/*Open groups*/
+.torrent_table tr.group_torrent:hover{background-color: rgba(27, 47, 63, 0.8);}
+
+#torrents #content .thin table {													/*Generic torrents background img*/
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png') repeat-y scroll bottom right;
+    border: 1px solid #036;}
+
+#torrents #content .thin table tr{background-color: rgba(27, 47, 63, 0.85);}
+/*#torrents #content .thin table tr:hover{background-color: rgba(24, 59, 88, 0.85);}*/
+#torrents #content .thin table td{border-left: none; border-right: none}
+
+#torrents #content .thin table td.label {background-color: rgba(24,59,88, 0.85);}
+
+#torrents #autocomplete {										/* Browse page auto complete */
+        position: absolute;
+        margin-top: -83px;
+        width: 316px;}
+#torrents #torrentsbrowsecomplete {
+        position: relative;
+        left: 252px;
+        display: block;
+        width: 100%;
+        border: 1px solid #596976;
+	-webkit-box-shadow: 4px 4px 13px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 4px 13px -1px rgba(0,0,0,0.75);
+	box-shadow: 4px 4px 13px -1px rgba(0,0,0,0.75);
+        z-index: 1000;}
+#torrents #torrentsbrowsecomplete li {
+        display: block;
+        background-color: #1b2e3f;
+        margin: 0;
+        padding: 5px 10px;
+        text-align: left;
+        line-height: 15px;
+        cursor: pointer;
+        border-bottom: 1px solid #596976;}
+#torrents #torrentsbrowsecomplete li:hover {                         /*Hover of drop down search menu*/
+        display: block;
+        background-color: #314f6d;
+        margin: 0;
+        padding: 5px 10px;
+        text-align: left;
+        line-height: 15px;
+        cursor: pointer;
+        border-bottom: 1px solid #596976;}
+
+.torrent_table a.addbookmark {														/*Bookmark icon*/
+    background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png");
+    background-position: 0 -259px;
+    background-repeat: no-repeat;
+    color: #000;
+    padding-bottom: 3px;
+    display: block;
+    text-indent: -1000px;
+    padding-left: 16px;}
+.torrent_table a.removebookmark {
+    background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/NavUserIcons.png");
+    background-position: 0 -281px;
+    background-repeat: no-repeat;
+    color: #000;
+    padding-bottom: 3px;
+    display: block;
+    text-indent: -1000px;
+    padding-left: 16px;}
+.torrent_table a.addbookmark:hover, .torrent_table a.removebookmark:hover {
+    border: none !important;}
+
+.rating_container {
+	display: inline-block;
+	padding: 1px 4px;
+	margin: 2px 3px 0px 4px;
+	background-color: #426D93;
+}
+.tags {
+	margin-left:4px;
+	font-style:italic;
+	font-size:9px;}
+#taglist a, .tags a {
+	font-weight:normal !important;
+	color:#ccc}
+#taglist a:hover, .tags a:hover {
+	color:#c7d6f1}
+#taglist td {
+	border:0}
+
+#torrents #content .thin table tr.owner, #torrents #content .thin table tr.owner:hover {background-color: rgba(24, 59, 88, 0.85);}
+
+#torrents #content .sidebar .box_albumart p {padding:0;margin:0;}
+.edition_info {color:white; background-color:rgba(24, 59, 88, 0.85);}
+tbody .r08, tbody .r09 {font-weight:bold;}
+tbody .r10, tbody .r20, tbody .r50, tbody .r99 {color:#bcd68c;}
+#torrent_table .colhead .sign {padding:0 8px;}
+#torrent_table #upvote {color:#86D406; font-weight:bold;}
+#torrent_table #downvote {color:#FF0000; font-weight:bold;}
+
+#torrents blockquote {background-color:#426382; color:#fff;}
+#torrents blockquote ul, #wiki blockquote ul {padding-left: 20px;}
+
+#torrents .body ul {margin-left:20px;}
+
+#torrents #content .main_column .forum_post td.body {color:#fff;}
+
+#torrents .main_column .forum_post td.avatar {
+        min-height: 150px;}
+#torrents .main_column .forum_post .body .content {
+        min-height: 108px;}
+#torrents .forum_post .comment_rating {
+        width: 100%;
+        min-height: 25px;
+        margin-top: 5px;
+        padding: 5px 0px 2px 3px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-top: 1px solid #003;
+        opacity: 0.6;}
+#torrents .forum_post .comment_rating .flleft {
+        width: 30px;
+        margin-top: 5px;
+        margin-right: 5px;}
+#torrents .forum_post .comment_rating img {
+        height: 25px;
+        width: 25px;}
+#torrents .forum_post .comment_rating p {
+        font-size: 0.8em;}
+
+#torrents #content .box p {
+	padding:10px;
+	margin-top:5px;}
+
+#torrents .main_column .body {
+	margin:0 20px;
+	border:1px dotted #E1ECF1;
+	padding:1.5em;
+	color:white;
+	font-family:Verdana, Sans-serif;}
+
+#torrents .main_column .body .spoilerbox {
+	color: #CCC;}
+
+#torrents #content .noticon {
+	height: 28px;
+	width: 28px;
+	text-align: center;}
+
+#torrents #content .checked {
+	background:url('https://gazellegames.net/static/styles/blue_ambrose/images/checkmark.png') no-repeat;
+	width: 20px;
+	height: 20px;
+	float: center;}
+#torrents #content .notchecked {
+	background:url('https://gazellegames.net/static/styles/blue_ambrose/images/crossn.png') no-repeat;
+	width: 20px;
+	height: 20px;
+	float: center;}
+
+#upload #upload_table table.covers {
+	border: hidden;}
+#upload #upload_table table.covers td {
+	text-align:center;}
+
+#torrents .filter_torrents{width:75%; margin:0 auto}
+#torrents .filter_torrents .cat_list label{position:relative; top:-2px}
+#torrents #content .filter_torrents table {	margin-bottom: 6px;}
+#torrents #content .filter_torrents #taglist {margin-bottom:-3px;}
+#torrents #content .filter_torrents #taglist td {border:#aaa dotted 1px;}
+#torrents #content .filter_torrents table tr {background-color:#426d93;}
+#torrents #content .filter_torrents table tr td.label {background-color:#426d93;}
+#torrents #content .filter_torrents table {border:solid black;}
+#torrents #content .filter_torrents table td {border:solid #2c4b66 1px;}
+#torrents #content .filter_torrents .submit {text-align:right;}
+#torrents #content .filter_torrents .submit span {position:relative; top:6px;}
+/*#torrents .group_torrent td strong+strong{color:#F00}
+#torrents .filter_torrents td{border:0}
+#torrents .filter_torrents .cat_list .label{border-right:0}
+#torrents .filter_torrents .cat_list{margin:10px 0;}
+#torrents .filter_torrents #taglist{border:0}
+#torrents .filter_torrents table{background-color:transparent}
+#torrents .filter_torrents h3{margin-top:0}
+#torrents .filter_torrents #taglist td{padding:2px 5px}
+#torrents .filter_torrents .inputtext{width:150px}
+#torrents .filter_torrents .smallest{width:80px}
+#torrents .filter_torrents table td.label{text-align:right; padding:0 5px 0 0}
+#torrents .filter_torrents a#swaptags{font-weight:bold; text-align:center; display:block; padding:5px 0}
+#torrents .filter_torrents .submit{padding:5px 0 0 0; font-weight:bold; text-align:right; direction:rtl}*/
+
+.torrent a{font-weight:bold}
+
+.linkbox{text-align:center; padding:0 0 8px; margin: 8px 0 8px 0;}
+.linkbox a{padding:0 3px; border-style: hidden;}
+
+.show_torrents{background-repeat:no-repeat; background-position:0 -1093px; width:30px; height:30px}
+.hide_torrents{background-repeat:no-repeat; background-position:0 -1033px; width:30px; height:30px}
+
+.group{font-weight:bold}
+.group td.nobr{font-weight:normal; color:#fff;}
+
+#torrent_table{margin:0; padding:0; border-spacing:0; border-collapse:collapse; width:100%}
+#torrent_table a img{border:0}
+#torrent_table td{margin:0; padding:3px}
+#torrent_table tr.colhead td{font-weight:bold}
+
+.torrent_table .pad td{
+	padding:20px !important;
+	border:1px solid #ACBFA9 !important}
+
+.torrent_table .pad td td{
+	border-left:0 !important;
+	border-right:0 !important;
+	background:none;
+	padding:5px !important}
+
+.torrent_table tr.group a, #torrent_table tr.group a, #torrent_table tr.group_torrent a, #torrent_table tr.group_torrent a  {
+	border-bottom:hidden;}
+
+.torrent_table tr.group_torrent td span.torrent_info_tags, #torrent_table tr.group_torrent td span.torrent_info_tags {
+	margin-left:5px;
+	color:#fff;}
+
+.torrent_table tr.group a:hover, #torrent_table tr.group a:hover, #torrent_table tr.group_torrent a:hover, #torrent_table tr.group_torrent a:hover {
+	border-bottom:dotted #444 1px;
+	color:#c7d6f1;
+	text-decoration:underline;}
+
+.torrent_table tr.group a:hover.show_torrents_link, #torrent_table tr.group a:hover.show_torrents_link, #torrent_table tr.group_torrent a:hover.show_torrents_link, #torrent_table tr.group_torrent a:hover.show_torrents_link {
+	border-bottom:hidden;}
+
+.show_torrents_link {
+	border:medium none;
+	display:block;
+	height:28px;
+	width:28px;
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/go_last_read.png');
+	background-repeat:no-repeat;
+	background-position:center center;}
+
+.torrent_table tr.group_torrent td span, #torrent_table tr.group_torrent td span{
+	margin-left:18px;
+	color:#fff;}
+
+.torrent_table tr.group_torrent a, #torrent_table tr.group_torrent a{
+	color:white;
+	font-weight:normal}
+
+#torrents #content .thin .main_column .torrent_table {
+	margin-top: 20px;}
+
+#torrents #content .thin .main_column .torrent_table .group_torrent span{
+	margin: 0;}
+
+#torrents #content .new_status {
+    background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/icons/new.png");
+    display: inline-block;
+    margin: auto 1px;
+    width: 25px;
+    height: 9px;}
+
+
+#torrents #content .center .box form div input[type="text"],
+#wiki #content .center .box form div input[type="text"],
+#artist #content .center .box form div input[type="text"]{
+	width:500px;
+	margin-bottom:10px}
+
+#torrents #content .center .box form div textarea, #wiki #content .center .box form div textarea, #upload textarea#album_desc, #upload textarea#release_desc, #forums #content .thin .box form .box textarea, #forums #quickpost  {
+	height:200px;
+	background-color:#d4e7ef;
+	border:solid #81b8ef 3px;
+	font-family:Arial;}
+
+#torrents #content .center .box form div,
+#wiki #content .center .box form div,
+#artist #content .center .box form div{
+	text-align:left !important}
+
+.sub {
+	height:1px;
+	left:60px;
+	overflow:visible;
+	position:relative;
+	top:27px;
+	visibility:hidden;
+	width:15%;}
+
+.sub span{
+	background:url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 50% transparent;
+	border: 1px solid #003;
+	display:block;
+	padding:5px;}
+
+.sub a{
+	color: #fff;}
+
+#torrents #content .main_column .body .screenshots img {
+	width: 150px;
+	margin: 5px;
+	border: white 1px solid;
+	vertical-align:top;}
+
+#grouplinks {
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+
+#grouplinks td {
+	float: left;
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+#linkedgroup {
+	opacity: 0.4;
+	filter: grayscale(50%);
+	-webkit-filter: grayscale(0.5);
+	filter: drop-shadow(2px 2px 15px black);
+	-webkit-filter: drop-shadow(2px 2px 15px black);
+}
+
+#linkedgroup:hover {
+	opacity: 1;
+	filter: grayscale(0%);
+	-webkit-filter: grayscale(0);
+	filter: drop-shadow(0.5px 0.5px 5px #80bf6d);
+	-webkit-filter: drop-shadow(0.5px 0.5px 5px #80bf6d);
+}
+
+#curlinkedgroup {
+	filter: drop-shadow(2px 2px 15px black);
+	-webkit-filter: drop-shadow(2px 2px 15px black);
+}
+
+.box_game_info .body {
+        padding-top: 6px;
+        padding-bottom: 6px !important;
+}
+.box_pack .body {
+        padding-top: 6px;
+        padding-bottom: 6px !important;
+}
+.box_series .body ul {
+        margin-left: 5px !important;
+}
+.box_series .body li {
+        padding-bottom: 4px;
+}
+.box_series .body {
+        padding-top : 6px;
+        padding-bottom: -6px;
+        margin-bottom: -14px;
+}
+
+/* Torrent Colouring */
+
+#color_leeching, #color_leeching .torrent_info_tags, #color_leeching a {
+        color: #167B0E !important;
+}
+
+#color_seeding, #color_seeding .torrent_info_tags, #color_seeding a {
+        color: #E2F700 !important;
+}
+
+#color_uploaded, #color_uploaded .torrent_info_tags, #color_uploaded a {
+        color: #ae83cc !important;
+}
+
+#color_snatched, #color_snatched .torrent_info_tags, #color_snatched a {
+        color: #F00009 !important;
+}
+
+#color_downloaded, #color_downloaded .torrent_info_tags, #color_downloaded a {
+        color: #ff4100 !important;
+}
+
+
+/*  Web Links  */
+#weblinks_edit .weblinks {
+        width: 400px;
+        height: 15px;
+}
+
+.sidebar .box {float:left;}
+
+.sidebar .box #weblinksdiv a {
+  	float: left;
+  	padding:5px;
+}
+
+.weblinks {
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 5px;
+}
+
+.tilt {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+
+.tilt:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+
+.Amazon,
+.BoardGameGeek,
+.DriveThruRPG,
+.EpicGames,
+.GameFAQs,
+.GamesWebsite,
+.Giantbomb,
+.Goodreads,
+.GOG,
+.GooglePlay,
+.GooglePlayBooks,
+.HowLongToBeat,
+.HumbleBundle,
+.Itch,
+.iTunes,
+.MobyGames,
+.NexusMods,
+.Nintendo,
+.Origin,
+.Ouya,
+.PSN,
+.RPGGeek,
+.RPGnet,
+.Steam,
+.Wikipedia,
+.XboxStore,
+.PCGamingWiki,
+.Bandcamp,
+.Discogs,
+.MusicBrainz,
+.VGMdb {
+  background-size:contain;}
+
+
+.Amazon {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Amazon.png");}
+.BoardGameGeek {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/BoardGameGeek.png");}
+.DriveThruRPG {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/DriveThruRPG.png");}
+.EpicGames {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/EpicGames.png");}
+.GameFAQs {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/GameFAQs.png");}
+.GamesWebsite {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/GamesWebsite.png");}
+.Giantbomb {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Giantbomb.png");}
+.Goodreads {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Goodreads.png");}
+.GOG {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/GOG.png");}
+.GooglePlay {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/GooglePlay.png");}
+.GooglePlayBooks {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/GooglePlayBooks.png");}
+.HowLongToBeat {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/HowLongToBeat.png");}
+.HumbleBundle {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/HumbleBundle.png");}
+.Itch {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Itch.png");}
+.iTunes {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/iTunes.png");}
+.MobyGames {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/MobyGames.png");}
+.NexusMods {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/NexusMods.png");}
+.Nintendo {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Nintendo.png");}
+.Origin {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Origin.png");}
+.Ouya {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Ouya.png");}
+.PCGamingWiki {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/PCGamingWiki.png");}
+.PSN {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/PSN.png");}
+.RPGGeek {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/RPGGeek.png");}
+.RPGnet {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/RPGnet.png");}
+.Steam {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Steam.png");}
+.VNDB {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/VNDB.png");}
+.Wikipedia {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Wikipedia.png");}
+.XboxStore {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/XboxStore.png");}
+.Bandcamp {background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Bandcamp.png");}
+.Discogs {background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/Discogs.png");}
+.MusicBrainz {background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/MusicBrainz.png");}
+.VGMdb {background-image:url("https://gazellegames.net/static/styles/blue_ambrose/images/weblinks/VGMdb.png");}
+
+/* Ratings and Reviews */
+.box .body.addtagsdiv, .body.userratingdiv {
+  padding-right: 6px;
+}
+
+#torrents #content .box .vote {
+  width: 40px !important;
+  border: 0px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#torrents #content .box img.desaturate {
+  -webkit-filter: grayscale(95%);
+        filter: grayscale(95%);
+        filter: gray;
+        filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+
+#torrents #content .box #thumbsup {
+  color: #62C746;
+  font-size:30px;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#torrents #content .box #thumbsdown {
+  color: #CC0000;
+  font-size:30px;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#clickable:hover {
+  cursor: pointer;
+}
+
+#torrents #content .userratingdiv table td {
+  background: #264059;
+  border: 0px #264059 solid !important;
+}
+
+#torrents #content .userratingdiv table {
+  border: 0px solid #036 !important;
+}
+
+#torrents #content .userratingdiv #review {
+  background-color: #426382;
+  color: white;
+  border: solid 1px #233c54;
+  border-radius: 4px;
+  width: 95%;
+  padding : 5px;
+  resize: none;
+  overflow: hidden;
+  box-shadow: inset 1px 1px 2px 0 #000;
+  transition: box-shadow 0.3s;
+}
+
+#torrents #content .userratingdiv #review:focus {
+  box-shadow: inset 1px 1px 2px 0 #2b4054;
+}
+
+#torrents #content .userratingdiv #reviewrow input {
+  padding: 4px;
+  bottom: 20px;
+  right: 16px;
+}
+
+#torrents #content .userratingdiv #reviewrow input::-moz-focus-inner { border:0; padding:0; }
+
+#torrents #content .userratingdiv #review::-webkit-input-placeholder { color: white; opacity: 1; }
+
+#torrents #content .userratingdiv #review:-moz-placeholder { color: white; opacity: 1; }
+
+#torrents #content .userratingdiv #review::-moz-placeholder { color: white; opacity: 1; }
+
+#torrents #content .userratingdiv #review:-ms-input-placeholder { color: white; opacity: 1; }
+
+#torrents #content .userratingdiv table td {
+  text-align: center;
+}
+
+#torrents #content .thin .userreviews table {
+  width: 100%;
+  border: none;
+  background: none;
+  margin-bottom: -2px;
+}
+
+#torrents #content .thin .userreviews tr {
+  background-color: transparent !important;
+}
+
+#torrents #content .thin .userreviews td {
+  font-size: 1.4em;
+  border: none;
+}
+
+#torrents #content .thin .userreviews table td {
+  vertical-align: top;
+}
+
+#torrents #content .thin .userreviews #usersreviewimage {
+  width: 20px;
+}
+
+#torrents #content .thin .userreviews #usersreviewimage img {
+  margin-top: 2px;
+  width: 27px;
+}
+
+#torrents #content .thin table #reviewdate {
+  font-size: 0.6em;
+  font-style: italic;
+}
+
+#torrents #content .thin #allreviewslink {
+  font-size: 0.8em;
+  font-style: italic;
+  text-decoration: underline;
+  float: right;
+  padding-top: 10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+}
+
+#allreviews {
+  margin-left: 12px;
+}
+
+#allreviews .box {
+  margin-top: -8px;
+}
+
+#allreviews table {
+  width: 95%;
+  margin: 8px auto;
+  background: transparent url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png') repeat scroll 0% 0% !important;
+  border: none;
+}
+
+#allreviews tr {
+  border: none;
+}
+
+#allreviews td {
+  font-size: 1.6em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 3px;
+  border: none;
+  vertical-align: top;
+  line-height: 150%;
+}
+
+#allreviews #deletereview {
+  padding-left: 5px;
+  font-size: 0.8em;
+}
+
+#allreviews #usersreviewimage img {
+  width: 20px;
+  margin-top: 5px;
+}
+
+#allreviews table #reviewdate {
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+#torrent_link .label {
+        width: 7%;
+}
+#torrent_link #specialed {
+        margin-left: 20px;
+}
+
+.torrent_history td {
+	max-width: 250px;
+}
+
+
+/****Similar Games*****/
+.box.similar_div {padding-bottom: 10px;}
+.similar_div .head .flright {margin-right: 10px;}
+.similar .similar_group {width: 170px;}
+.similar ul {
+        list-style: none;
+        max-height: 270px;
+        margin: 0px;
+        padding: 0px;
+        overflow-y: auto;}
+.similar li.similar_group {
+        display: block;
+        width: 24%;
+        margin: 0px .5% 5px;
+        padding: 0px !important;
+        float: left;}
+.similar .similar_group > a img {
+        width: 100%;
+        height: 200px;
+        margin: 1px 0px;
+        padding: 0 1px;}
+
+.similar .similar_votes {
+        width: 102%;
+        float: left;
+        padding: 5px 0;
+        background-color: rgba(0,0,0,.6);
+        border-radius: 0 0 5px 5px;
+        font-size: 1.3em;
+        font-weight: bold;}
+
+.similar .similar_votes a {margin-right: 5px;}
+.similar .similar_votes a:hover {
+        text-decoration: none;
+        filter: drop-shadow(0px 0px 3px #999);}
+
+.main_column .similar img[src*="leechers"] {
+        margin-top: 0px;
+        height: 17px;
+        vertical-align: middle;}
+.main_column .similar img[src*="seeders"] {
+        height: 17px;}
+.similar li#suggested_header {
+        clear: left;
+        font-size: 1.3em;
+        font-weight: bold;
+        height: 30px;}
+
+/* ****************************** */
+/* ********CATEGORY ICONS******** */
+/* ****************************** */
+
+.amigacd32			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/amigacd32.png')}
+.amstradcpc			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/amstradcpc.png')}
+.android			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/android.png')}
+.apps				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/apps.png')}
+.atari2600			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/atari2600.png')}
+.atari5200			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/atari5200.png')}
+.atari7800			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/atari7800.png')}
+.atarijaguar		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/atarijaguar.png')}
+.atarilynx			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/atarilynx.png')}
+.bandaiwonderswancolor	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/bandaiwonderswancolor.png')}
+.boardgame			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/boardgame.png')}
+.cardgame			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/cardgame.png')}
+.colecovision		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/colecovision.png')}
+.dos				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/dos.png')}
+.dreamcast			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/dreamcast.png')}
+.dvd				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/dvd.png')}
+.ebook				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/ebook.png')}
+.ex-bgcollections	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/ex-bgcollections.png')}
+.ex-bgfullsets		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/ex-bgfullsets.png')}
+.ex-bggoldens		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/ex-bggoldens.png')}
+.fairchildchannelf	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/fairchildchannelf.png')}
+.gameboy			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/gameboy.png')}
+.gameboyadvance		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/gameboyadvance.png')}
+.gameboycolor		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/gameboycolor.png')}
+.gamegear			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/gamegear.png')}
+.generalcomputervectrex	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/generalcomputervectrex.png')}
+.intellivision		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/intellivision.png')}
+.interactivedvd		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/dvd.png')}
+.linux				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/linux.png')}
+.mac				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/mac.png')}
+.mastersystem		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/mastersystem.png')}
+.megadrive			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/megadrive.png')}
+.memotechmtx		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/memotechmtx.png')}
+.msx				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/msx.png')}
+.msx2				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/msx2.png')}
+.music				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/music.png')}
+.nes				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/nes.png')}
+.nintendo3ds		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/nintendo3ds.png')}
+.nintendo3dsvc          {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/nintendo3dsVC.png')}
+.nintendo64			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/nintendo64.png')}
+.nintendods			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/nintendods.png')}
+.nintendogamecube	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/nintendogamecube.png')}
+.phonepda			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/phonepda.png')}
+.playstation1		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/playstation.png')}
+.playstation2		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/playstation2.png')}
+.playstation3		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/playstation3.png')}
+.psonpsp			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/playstationonpsp.png')}
+.psponps3			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/psponps3.png')}
+.playstation4		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/playstation4.png')}
+.playstationportable{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/playstationportable.png')}
+.playstationvita	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/playstationvita.png')}
+.milesgordonsamcoupe{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/samcoupe.png')}
+.saturn				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/saturn.png')}
+.snkneogeopocket	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/neogeopocket.png')}
+.snes			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/supernes.png')}
+.taitotypex			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/taitotypex.png')}
+.tandycolorcomputer	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/tandycolor.png')}
+.tangerineoric		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/tangerineoric.png')}
+.thomsonmo5			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/thomsonm05.png')}
+.turbografx			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/turbografx.png')}
+.vectrex			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/vectrex.png')}
+.virtualboy			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/virtualboy.png')}
+.watarasupervision	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/watarasupervision.png')}
+.wii				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/wii.png')}
+.wiivc				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/wiivc.png')}
+.wiiware 			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/wiiware.png')}
+/*.windows			{height:28px; width:28px; background: url('../game_room/images/caticons/windows.png')} /*Dieslrae - addition for #2: "Windows caticon is using Win7 instead of Win11 icon" by TripleR */ 
+.windows			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/game_room/images/caticons/windows.png')} 
+.windows95			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/windows95.png')}
+.windowsxp			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/windowsxp.png')}
+.wonderswan			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/wonderswan.png')}
+.xbla				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/xbla.png')}
+.xbox				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/xbox.png')}
+.xbox360			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/xbox360.png')}
+
+.\33 do                       {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/3do.png')}
+.commodoreamiga		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/amiga.png')}
+.commodore64		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/commodore64.png')}
+.creativision		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/creativision.png')}
+.game\.com                       {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/gamecom.png')}
+.atarist			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/atarist.png')}
+.sg-1000			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/sg1000.png')}
+.philipsvideopac\+	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/videopac.png')}
+.mattelintellivision{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/intellivision.png')}
+.sharpx68000		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/sharp x86000.png')}
+.casiopv-1000		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/casiopv1000.png')}
+.casioloopy			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/loopy.png')}
+.pico				{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/pico.png')}
+.emersonarcadia2001	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/arcadia2001.png')}
+.nokian-gage		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/n-gage.gif')}
+.necturbografx-16	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/turbografx16.png')}
+.necsupergrafx		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/supergfx.png')}
+.necpc-98               {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/necpc-98.png')}
+.necpc-fx               {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/pc-fx.png')}
+.magnavox-phillipsodyssey	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/magnavoxodyssey.png')}
+.rcastudioii                       {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/RCAII.png')}
+.hartunggamemaster	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/gamemaster.png')}
+.gameparkgp32		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/gp32.png')}
+.funtechsuperacan	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/funtech.gif')}
+.epochsupercasettevision	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/epoch.png')}
+.entexadventurevision		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/entex.png')}
+.pokemonmini		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/pokemonmini.gif')}
+.bandaiwonderswan	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/wonderswan.png')}
+.miniaturewargames	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/miniaturewargames.png')}
+.penandpaperrpg		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/penandpaperRPGS.png')}
+.applebandaipippin	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/applebandaipippin.png')}
+.commodore128		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/commodore128.png')}
+.commodorevic-20	{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/vic20.png')}
+.sharpx1		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/sharpx1.png')}
+.newnintendo3ds         {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/newnintendo3ds.png')}
+.v\.smile		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/vsmile.png')}
+.wiiu			{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/wiiu.png')}
+.wiiuvc                 {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/wiiuvc.png')}
+.zxspectrum		{height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/zxspectrum.png')}
+.retro-other           {height:28px; width:28px; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/retro-other.png')}
+.switch				{height:28px; width:28px; display:inline-block; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/switch.png')}
+.zxspectrum			{height:28px; width:28px; display:inline-block; background: url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/zxspectrum.png')}
+
+td.cats_col {
+	width: 28px;
+	padding: 3px;}
+.cats_guides, .cats_ebooks {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/ebook.png');
+	width:28px;
+	height:28px;}
+.cats_applications {
+	height:28px;
+	width:28px;
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/apps.png');}
+.cats_ost {
+	background-image:url('https://gazellegames.net/static/styles/blue_ambrose/images/caticons/music.png');
+	width:28px;
+	height:28px;}
+.covers img {
+	max-height: 100px;
+	max-width:110px;
+	margin:8px;}
+.covers {text-align:center;}
+
+/* ********************************** */
+/* **********REVIEW RATINGS********** */
+/* ********************************** */
+
+#reviews_table {
+	width:auto;
+	border:hidden;}
+
+.ratings {
+	height: 30px;
+	width: 100px;
+	margin: auto;
+	padding: 10px 0 10px 50px;
+	font-size: 18px;
+	font-weight: bold;}
+
+.ratings.meta {background: URL("https://gazellegames.net/static/styles/blue_ambrose/images/icons/metacritic.png") no-repeat transparent;}
+.ratings.ign {background: URL("https://gazellegames.net/static/styles/blue_ambrose/images/icons/ign.png") no-repeat transparent;}
+.ratings.cnet {background: URL("https://gazellegames.net/static/styles/blue_ambrose/images/icons/cnet.png") no-repeat transparent;}
+.ratings.gamespot {background: URL("https://gazellegames.net/static/styles/blue_ambrose/images/icons/gamespot.png") no-repeat transparent;}
+.ratings .green, .ratings .yellow, .ratings .red {
+	font-size: 25px;
+	font-weight: normal;}
+.ratings .green {color: #62C746;}
+.ratings .yellow {color: #FBB803;}
+.ratings .red {color: #CC0000;}
+
+#torrents #torrent_comments .user_title,
+#requests .user_title,
+#forums .user_title {
+     display: block;
+     margin: 3px 0;}
+
+
+/* ************************** */
+/* *******Bookmarks********** */
+/* ************************** */
+
+#torrents .main_column table#collages {
+    width: 95%;
+    margin: 0 20px;}
+
+#bookmarks table#collage_table td {
+    padding: 7px;
+   	background-color:transparent;}
+
+#bookmarks table {
+	background: url("https://gazellegames.net/static/styles/blue_ambrose/images/companioncube-blue.png") repeat-y scroll center top;
+   	background-color: rgba(27, 47, 63, 0.55);
+	border: #036 solid 1px;
+    width: 760px;}
+#bookmarks table td {
+   	background-color:transparent;}
+
+/* ************************** */
+/* *******Achievements******* */
+/* ************************** */
+
+#achievements {
+	border: 1px solid #036;
+	background-color: #426d93;}
+
+#achievements tr {
+	background: none;
+	border-bottom: #036 1px solid;
+	color: #fff;}
+
+#achievements td {
+	background:#426d93;
+	border: none;
+	vertical-align: middle;
+	text-align: center;}
+#achievements td.achlabel {
+	text-align: right;}
+#achievements td .levelcont {
+	margin: 0pt auto;
+	width: 78px;}
+#achievements td .levelcont .bubble {
+	display: inline-block;
+    vertical-align: top;
+	background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/userbubble.png');
+	background-repeat: none;
+	height: 15px;
+	width: 15px;
+	float: right;}
+#achievements td .levelcont .spacer {
+	width: 15px;
+	display: inline-block;
+	float: right;}
+#achievements td .italic {
+	font-size: 10px;
+	font-style: italic;
+	font-weight: normal;}
+#achievements td .levelcont .complete {
+	display: inline-block;
+    vertical-align: top;
+	background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/usercheck.png');
+	background-repeat: none;
+	height: 15px;
+	width: 15px;
+	float: right;}
+
+#achievements img{
+	border: none;
+	vertical-align: middle;}
+#achievements .levelcont img{
+	margin-left: 15px;
+	width: 48px;
+	float: left;}
+#achievements img:hover {
+	opacity: 1 !important;}
+
+/* ************************ */
+/* ****USER EDIT SCREEN**** */
+/* ************************ */
+
+#user #requests table {
+	width:700px;
+	margin:0 auto;}
+
+#user #content .thin table {
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png') repeat-y scroll bottom right;
+	border: 1px #036 solid;}
+
+#user #content .thin td {
+	background-color: rgba(24, 59, 88, 0.85);
+	border:none;}
+#user #content .thin td.label {
+	background-color:  rgba(27, 47, 63, 0.85);
+	text-align:left;
+	font-weight:bold;}
+
+#user #content table tr.colhead td{							/*Column headers in edit screens */
+    background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent;
+    color: #FFFFFF;
+	font-size:7ipt;
+    font-weight: 700;
+    height: 12px;
+    padding-top: 10px;
+    white-space: nowrap;
+	background-size: auto 100%;}
+#user #content table td.colhead {
+    background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent;
+    color: #FFFFFF;
+	font-size:7ipt;
+    font-weight: 700;
+    height: 12px;
+    padding-top: 10px;
+    white-space: nowrap;
+	background-size: auto 100%;}
+#user #content table tr.colhead_dark td{
+    background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent;
+    color: #FFFFFF;
+	font-size:7ipt;
+    font-weight: 700;
+    height: 10px;
+    padding-top: 5px;
+    white-space: nowrap;
+	background-size: auto 100%;}
+#user #content table td.colhead_dark {
+    background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent;
+    color: #FFFFFF;
+	font-size:7ipt;
+    font-weight: 700;
+    height: 10px;
+    padding-top: 5px;
+    white-space: nowrap;
+	background-size: auto 100%;}
+#user #content #itemsdiv table td {
+    width: 25%;}
+#user #content #itemsdiv table td div {
+    display: inline-block;
+    text-align: center;
+    margin: auto;}
+#user #content #itemsdiv table td div img {
+    max-width: 75px;
+    padding: 2px;}
+
+/***** User Profile ******/
+#user .profile .box_stats li.online {
+	font-weight: bold;
+	color: #C7EB35;}
+#user .profile .profile_link_count {
+	font-weight: bold;}
+#user .profile .profile_link_count:after {
+	content: ")";}
+#user .profile .profile_link_count:before {
+        content: "(";}
+#user .profile #user_stats {
+	margin-top: -15px;}
+
+.profile .box_community #community_stats {
+	display: block;
+        overflow: auto;
+        margin: -5px 0px 0px -10px;}
+.profile .box_community #community_stats ul {
+	float: left;
+	width: 21%;
+        list-style: none;}
+.profile .box_community .space {
+        height: 10px;}
+
+.box_review_hover .head {
+	background-color: #112030;
+	text-align: center;
+	line-height: 20px;
+	height: 100%;
+	width: 100%;
+	font-family: Arial;
+	font-size: 12px;
+	color: #CEF6FF;
+	text-decoration: none;
+	font-weight: bold;}
+
+/***Friends***/
+#friends .user_info,
+#friends .user_links {width: 30%;}
+#friends .item_links {width: 50%;}
+#friends .user_info li,
+#friends .user_links li,
+#friends .item_links li,
+#friends .comment_tr li {list-style-type: none; padding-bottom: 3px;}
+#friends .item_links li {padding-left: 25px;}
+#friends li.inventory_link {background: url("https://gazellegames.net/static/styles/blue_ambrose/images/icons/icon_standard.png") no-repeat left center;}
+#friends li.trade_link {background: url("https://gazellegames.net/static/styles/blue_ambrose/images/icons/icon_trading_card.png") no-repeat left center;}
+#friends li.tip_link {background: url("https://gazellegames.net/static/styles/blue_ambrose/images/icons/coins_add_small.png") no-repeat left center;}
+#friends .user_info .online {color: #C7EB35;}
+#friends .comment_input {width: 90%;}
+#friends .remove_friend {
+     display: inline-block;
+     height: 20px;
+     width: 20px;
+     background: url("https://gazellegames.net/static/styles/blue_ambrose/images/crossn.png") no-repeat left center;}
+
+/****Image Gallery****/
+.profile .box_art_gallery .gallery {
+        margin-left: 3px;
+        display: inline-block;}
+
+.profile .box_art_gallery .gallery_slot {
+        overflow: hidden;}
+
+.profile .box_art_gallery .gallery_main_slot {
+        float: left;
+        width: 100%;
+        height: auto;
+        max-height: 600px;}
+
+.profile .box_art_gallery .gallery_row {
+        padding: 0;
+        margin: auto;
+        position: relative;
+        width: 100%;
+        max-height: 150px;
+        white-space: nowrap;
+        overflow: hidden;}
+.profile .box_art_gallery .gallery_small_slot {
+        display: inline-block;
+        max-height: 150px;
+	margin: 1px;}
+.profile .box_art_gallery .large_row .gallery_small_slot {width: 23%;}
+.profile .box_art_gallery .small_row .gallery_small_slot {width: 24%; margin: 3px;}
+.profile .gallery_small_slot img {display: block;}
+.profile .box_art_gallery .gallery_small_slot.selected {border: 1px solid white;}
+
+/* ******************************* */
+/* **********COLLECTIONS********** */
+/* ******************************* */
+
+#collections .thin table {
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/mariobkg2.png') repeat-y scroll bottom right;
+    border: 1px solid #036;}
+
+#collections #content .center {margin:15px auto;}
+#collections #content .center table {border: 1px solid #036;}
+#collections #content .center table tr {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png');}
+#collections #content .center table tr td.label {background-color:rgba(27, 47, 63, 0.75); }
+#collections #content .center table tr td {background-color:rgba(27, 47, 63, 0.75); border: none;}
+
+#collections table.collage tr {background-color:rgba(27, 47, 63, 0.85);}
+#collections #content #torrent_table tr td {background-color:rgba(27,47,63,0.65);}
+#collections #content td.collicon{height:28px; width:28px;}
+
+#collections #content #new_collage tr td.label {background-color:rgba(24,59,88,0.85); border:none;}
+#collections #content #new_collage tr td {background-color:rgba(27,47,63,0.65); border:none;}
+#collections #content #edit_collage tr td.label {background-color:rgba(24,59,88,0.85); border:none;}
+#collections #content #edit_collage tr td {background-color:rgba(27,47,63,0.65); border:none;}
+
+/* Collection Pages */
+.collage_images li {
+        vertical-align: middle;
+}
+#collections .sidebar .box_description img {
+        width: auto;
+        border: 0px;
+        margin: 0px;
+}
+#collections .sidebar .box_albumart img {
+        width: 180;
+        border: 0px;
+        margin: 0px;
+}
+#collections .sidebar .subhead {
+        padding-top: 1px;
+        text-align:center;
+}
+#collections .box_description div {
+        word-wrap: break-word;
+}
+ul.collage_images {
+    padding: 0px;
+    width: 760px;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+ul.collage_images li {
+    padding: 5px;
+    border: none;
+    float: left;
+    margin: 0px;
+    width: 142px;
+    height: 162px;
+    list-style: none;
+    list-style-type: none;
+}
+
+ul.collage_images li a {
+    display: block;
+    height: 162px;
+    overflow: hidden;
+}
+
+ul.collage_images img {
+    width: 142px;
+    height: 162px;
+}
+
+.collections .linkbox .selected .pageslink {
+        color: #e1ecf1;
+}
+
+#collections .box_comment .pad img {
+        height: initial;
+        width: initial;
+        border: 0px;
+        padding: 1px;
+        margin: 0px;
+}
+
+#sort_table {
+  border: 0px !important;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+#sort_table td, #sort_table tr {
+  border: 0px;
+}
+
+/* Browse Page */
+.collections_art_display {
+        background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube-blue.png') !important;
+}
+.collections_art_display td {
+	position: relative;
+	border: none;
+	padding: 2px;
+	width: 25%;
+}
+.collections_art_display .collection_art {
+        height:100px;
+        background-size: 246px 100px;
+}
+#collections #content .center table tr, td {
+        background: none;
+}
+#collections #content .center table {
+        background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube-blue.png') !important;
+}
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;}
+.hovereffect .overlay {
+  width: 101%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top:5%;
+  left: 0;}
+.hovereffect .img_responsive{
+        display: block;
+        position: relative;
+        width:100%;}
+
+.hovereffect h2 {
+        text-align: left;
+        position: relative;
+        font-size: 15px;
+        line-height: 18px !important;
+        height: 80%;
+        padding: 5px;
+        border-bottom: none;
+        background: rgba(0, 0, 0, 0.7);
+        font-family:arial;
+        -webkit-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7);
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        color: #fff;}
+.hovereffect h2 div {
+        font-size:11px;
+        font-style:italic;}
+.hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);}
+
+.overlay h2 a:hover {
+        color: white;
+        text-decoration: none;
+        top: 0px;
+        left: 0px;
+}
+
+.overlay div {padding-top: 5px;}
+
+.overlay div a:hover {
+        color: #C7D6F1;
+        text-decoration: underline;
+        top: 1px;
+        left: 1px;
+}
+
+.overlay span {
+        line-height: 14px;
+        font-style: normal;
+}
+
+.collections_art_display .remove_bookmark_div {
+	position: absolute;
+	right: 2px;
+	z-index: 1;
+}
+/* ******************************* */
+/* *************RULES************* */
+/* ******************************* */
+
+#rules #wrapper #content {
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png') repeat-y scroll top center;
+	color:#fff;}
+#rules #wrapper #content .thin{
+	background-color:rgba(27, 47, 63, 0.85);
+	color:#fff;}
+
+#rules #content li{margin:0 0 5px 0}
+
+#rules h2.center {
+	color:#fff;
+	border:hidden;}
+#rules h2  {
+	color:#fff;
+	border:hidden;}
+
+#rules #content .box p {
+	padding:3px;
+	margin-bottom:10px;}
+
+#rules #content a {
+	color:#fff;
+	border:hidden;}
+
+#rules #content .box a {
+	color:#fff;
+	text-decoration:underline;}
+
+#rules #content .thin a strong {border:hidden;}
+
+#rules #wrapper #content .thin .box {
+	background-color:rgba(24, 59, 88, .55);
+	margin:0 20px;
+	border:solid #036 1px;}
+
+#rules #content .thin {padding-bottom:30px;}
+#rules #content .thin .pad ul {padding:10px;}
+
+#rules #wrapper #content .thin .box a  {
+	color:#fff;
+	border-bottom-color:#2c4b66;
+	text-decoration:none;}
+
+#rules #wrapper #content .thin .box a:hover {
+	color:#c7d6f1;
+	border-bottom-color:#444;
+	text-decoration:underline;}
+
+/* ************************** */
+/* **********DONATE********** */
+/* ************************** */
+
+.donation_box_wrapper {
+	border: 1px solid #2b2b2b;
+	display: block; float: left;
+    width: 18.5%;
+	margin-top: 10px;
+	margin-left:10px;
+	margin-bottom:10px;}
+
+.donation_box {
+	border: 1px solid #434343;
+	padding: 6px;
+	float: left;
+	background-color: #2f2f2f;
+	min-width: 91%;
+	min-height: 250px;
+	font-size: 8pt;}
+
+.donation_box ul li {margin-left: -25px; padding-bottom: 5px;}
+
+.donation_box h2 {
+	margin-top: -1px;
+	text-align: center;
+	margin-bottom: 12px;
+	font-weight: bold;
+	font-size: 9pt;}
+
+.std_donations_box_wrapper {
+	border: 1px solid #2b2b2b;
+	margin-bottom: 10px;}
+
+.std_donations_box {
+	border: 1px solid #434343;
+	padding: 0px;
+	overflow: auto;
+	background-color: #2f2f2f;}
+
+.donation_head { height: 225px;}
+
+.donate_box_wrapper {
+	width: 19%;
+	margin: 3px;
+	float: left;
+	border: 1px solid #262626;}
+
+.donate_box_header {
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: #434343;
+	border-bottom: 1px solid #272727;
+	padding: 5px;
+	background-color: #2f2f2f;
+	margin: 0px;
+	font-weight: bold;
+	font-size: 12px;}
+
+.donate_box_header_nature {background-color: #707DB3;}
+.donate_box_header_silver {background-color: #868686;}
+.donate_box_header_gold {background-color: #EAC117;	color:#222;}
+.donate_box_header_plat {background-color: #fff; color:#222;}
+
+.donate_box_header h1 {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 9px;}
+
+.donate_box_content {
+	border: 1px solid #434343;
+	padding: 5px;
+	background-color: #2f2f2f;}
+.donate_box_content_nature {background-image: url("https://gazellegames.net/static/styles/blue_ambrose/images/donate-natural.png"); color: #000;}
+.donate_box_content_silver {background:#c0c0c0 url("https://gazellegames.net/static/styles/blue_ambrose/images/donate-silver.png") no-repeat center bottom; color:#333;}
+.donate_box_content_gold {background:#FDD017 url("https://gazellegames.net/static/styles/blue_ambrose/images/donate-gold.png") no-repeat center bottom;	color:#222;}
+.donate_box_content_plat {background:#E5E4E2 url("https://gazellegames.net/static/styles/blue_ambrose/images/donate-platinum.png") no-repeat center bottom;	color:#222;}
+
+.donate_box_choice {
+	min-height: 230px;
+	position: relative;}
+.donate_box_choice input {
+	position: absolute;
+	bottom: 10px;
+	height: 14px;
+	width: 95%;}
+.donate_box_choice ul {overflow:hidden;}
+.donate_box_choice ul li {}
+.donate_box_content ul li { margin-left: 20px; padding-bottom: 5px;}
+
+.donate-button-nature {
+	border: 1px solid #2a2a2a;
+	background: #707db3;
+	color: #fff;
+	font-size: 8pt;
+	font-weight: bold;
+	padding: 5px;
+	height: 25px;
+	width: 150px;
+	cursor: pointer;}
+.donate-button-silver{
+	border: 1px solid #2a2a2a;
+	background: #868686;
+	color: #fff;
+	font-size: 8pt;
+	font-weight: bold;
+	padding: 5px;
+	height: 25px;
+	width: 150px;
+	cursor: pointer;}
+.donate-button-gold {
+	border: 1px solid #2a2a2a;
+	background: #EAC117;
+	color: #222;
+	font-size: 8pt;
+	font-weight: bold;
+	padding: 5px;
+	height: 25px;
+	width: 150px;
+	cursor: pointer;}
+.donate-button-platinum {
+	border: 1px solid #2a2a2a;
+	background: #fff repeat-x;
+	color: #222;
+	font-size: 8pt;
+	font-weight: bold;
+	padding: 5px;
+	height: 25px;
+	width: 150px;
+	cursor: pointer;}
+.donate-button-custom {
+	border: 1px solid #2a2a2a;
+	color: #fff;
+	font-size: 8pt;
+	font-weight: bold;
+	padding: 5px;
+	height: 25px;
+	width: 150px;
+	cursor: pointer;}
+
+#donate p {margin:10px;	font-size:10pt;}
+
+#donate #content input {margin:10px;}
+#donate #content input.custom_amount {	width: 151px;}
+#donate #content ul li {margin-bottom:5px;}
+#donate #content ul {margin:10px;}
+
+.donate_bitcoin {text-align: center;}
+.donate_bitcoin .bitcoin-qr {
+    background-image: url("https://gazellegames.net/static/common/bitcoin-qr.PNG");
+    height: 255px;
+    margin: 0 auto 10px;
+	width: 254px;}
+	
+.donation_info img {
+	padding: 0 2px 0 2px;}
+
+/* ************************** */
+/* *******STAFF TOOLS******** */
+/* ************************** */
+
+#staff .thin .box {padding-top:3px !important}
+#site_debug {border-top: dashed white;}
+#site_debug table {width:auto;}
+#site_debug .debug_sql_extended {
+	margin: 5px;
+	padding: 8px;
+	background: rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.3);}
+
+#tools #content .permission_container  {
+	background: url("https://gazellegames.net/static/styles/blue_ambrose/images/companioncube-blue.png") repeat-y center bottom;
+	float:left;
+	margin-right:20px;
+	width: 228px;
+	border:#000 solid 1px;}
+#tools #content .permission_container td {
+	background-color:rgba(27, 47, 63, 0.5);
+	border: none;}
+
+#tools #content .permissions {
+	margin:0 auto;}
+
+#tools td.colhead {height:8px;}
+
+#todo td.bug , #todo td.task {
+	width: 32px;
+	height: 32px;
+	margin: 0;
+	padding: 0;}
+
+#todo td.bug  {background:url("https://gazellegames.net/static/styles/blue_ambrose/images/bug.png") no-repeat;}
+#todo td.task {background:url("https://gazellegames.net/static/styles/blue_ambrose/images/task.png") no-repeat;}
+
+#todo .center {
+	margin: 0 auto;
+	float: none;}
+
+#tools #content input {padding: 0px 2px; margin: 0px 5px;}
+
+#reportsv2 textarea {height:200px; width:550px;}
+#reportsv2 #content ul li {margin-left:20px;}
+
+#platformStats .colhead, .colhead_dark {text-align: left;}
+#platformStats tr a {margin-left: 2px;}
+#platformStats .rowa td {height: 15px !important;}
+#platformStats .rowb td {height: 15px !important;}
+
+/* ************************ */
+/* **********WIKI********** */
+/* ************************ */
+
+#wiki .thin {width: 853px !important;}
+#wiki pre {color: #fff;}
+#wiki .spoilerbox {color: #fff;}
+#wiki blockquote a {color: #fff;}
+
+#wiki blockquote {
+	width: 475px;}
+
+#wiki .main_column {
+    background: url("https://gazellegames.net/static/styles/blue_ambrose/images/companioncube-blue.png") repeat scroll -3px 0 transparent;
+    border-radius: 15px 15px 15px 15px;
+	border: 1px #036 solid;
+    margin-left: 0px;
+    width: 628px;
+    margin-bottom: 12px;}
+
+#wiki .main_column ul {
+    border-radius: 10px 10px 10px 10px;
+    list-style: disc inside none;
+    margin: auto;
+    padding: 11px;
+    text-align: left;
+    width: 450px;
+    box-shadow: 1px 1px 5px 1px #666;}
+
+#wiki .main_column .box, .main_column table {
+    background: none repeat scroll 0 0 transparent;
+    margin-bottom: 10px;}
+
+#wiki .thin .linkbox.box {
+    background: none repeat scroll 0 0 transparent;}
+
+#wiki .main_column .box .pad {
+    text-align: left;
+    width: 434px;
+    margin: 16px 50px;
+    color: #fff;}
+#wiki .main_column .box .pad img {max-width: 500px !important;}
+#wiki .main_column .box .pad a {border: medium none !important; color: #7FB7D3;}
+
+#wiki body{
+color: #e8e8e8;
+font-family: 'Segoe UI';
+line-height: 14pt}
+
+#wiki span.size5 {
+font-size: 1.75em;
+color: #7FB7D3;
+line-height: 1.3em}
+
+#wiki .main_column .box .pad {
+width: auto}
+
+#wiki .main_column .box .pad a {
+border-bottom: 1px dotted #7FB7D3}
+
+/* **************************** */
+/* **********LOG PAGE********** */
+/* **************************** */
+
+td .log_blue {color: #3CF;}
+td .log_red {color: #F66;}
+td .log_green {color: #3F6;}
+td .log_ {color: #}
+td .log_ {color: #}
+td .log_ {color: #}
+td .log_ {color: #}
+td .log_ {color: #}
+td .log_ {color: #}
+td .log_ {color: #}
+
+#log #content table {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png'); border: 1px solid #036;}
+#log #content table tr td.label {background-color:rgba(27, 47, 63, 0.85);}
+#log #content table tr td {background-color:rgba(27, 47, 63, 0.85);}
+#log #content table tr.rowa:hover {background-color: rgba(24, 59, 88, 0.85);}
+#log #content table tr.rowb:hover {background-color: rgba(24, 59, 88, 0.85);}
+
+#log #content table tr.colhead td {
+	background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent !important;
+	border: none;}
+
+/* *************************** */
+/* **********REQUESTS********* */
+/* *************************** */
+
+#requests #content table {/*background: url('https://gazellegames.net/static/styles/blue_ambrose/images/mariobkg2.png') no-repeat;*/ border: 1px solid #036; background-size: 100% 100%;}
+#requests #content table tr td.label {background-color:rgba(27, 47, 63, 0.85);}
+#requests #content table tr td {background-color:transparent; border: none;}
+#requests #content table tr.rowa {background-color: rgba(27, 47, 63, 0.75);}
+#requests #content table tr.rowb {background-color: rgba(24, 59, 88, 0.75);}
+
+/*
+ #requests #content table tr:not([class="rowa"]):not([class="rowb"]) {
+     background: none repeat scroll 0 0 rgba(24, 59, 88, 0.85);
+}
+*/
+
+#requests #content .center {
+	width:85%;
+	margin: 0 auto;
+	border: 1px solid #036;}
+
+#requests #content .center #otherop {margin-bottom: -3px;}
+
+#requests #content .center table {
+	background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png');
+	border: 1px solid #003;
+	margin-bottom: 6px;}
+#requests #content .center table td {border:none;}
+#requests #content .center table tr {background-color:rgba(24,59,88,0.85);}
+#requests #content .center table tr td.label {background-color:rgba(27,47,63,0.65);}
+
+#requests #content .center .submit {
+	text-align:right;
+	margin-right: 5px;}
+
+#requests #content .colhead_dark td {padding:0 5px;}
+#requests #content table tr.colhead_dark td{
+     background: url('https://gazellegames.net/static/styles/blue_ambrose/images/colheadgrad.png');}
+#requests #content #request_comments tr.colhead_dark td {
+     background-size: contain;
+     padding-bottom: 5px;}
+#requests .colhead, #requests .colhead_dark {white-space: normal;}
+#requests #gold_donations {width: 140px;}
+
+/* ********************** */
+/* **********IRC********* */
+/* ********************** */
+
+#chat #wrapper #content {
+	background-color:rgba(24,59,88,0.85);;
+	color:#fff;}
+
+#chat #wrapper #content .thin .box {
+	background-color:#2c4860;
+	margin:0 20px;
+	border:solid #036 1px;}
+
+#chat #content blockquote {
+	background-color:#426d93;}
+
+#chat #content .thin {margin-bottom:20px;}
+#chat #content .thin .pad ul {padding:10px;}
+#chat #content {padding-bottom:10px;}
+
+#chat #wrapper #content .thin .box a  {
+	color:#c7eb16;
+	text-decoration:none;}
+#chat #wrapper #content .thin .box a:hover {
+	color:c7eb16;
+	text-decoration: underline;}
+
+#loginpaste {width:925px; margin: 0 auto;}
+#qwebcontainer {width:925px; margin: 0 auto;}
+#qwebframe {width:925px; height:620px;}
+
+/* ************************** */
+/* **********TOP 10********** */
+/* ************************** */
+
+#top10 #content .thin .center {margin:0 auto; margin-bottom:30px;}
+#top10 #content .thin .center table {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png'); border: 1px #003 solid;}
+#top10 #content .thin .center table tr td {background-color:rgba(27, 47, 63, 0.85); border: none;}
+#top10 #content .thin .center table tr td.label {background-color:rgba(27, 47, 63, 0.85); border: none;}
+
+#top10 #content .group_torrent td.center {width:28px;}
+
+#top10 #content table.border {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/mariobkg2.png') center center; border: 1px #003 solid;}
+#top10 #content .thin tr.rowa {background-color: transparent;}
+#top10 #content .thin tr.rowb {background-color: transparent;}
+
+#top10 #content .rowa td {background-color: rgba(27, 47, 63, 0.75); border: none;}
+#top10 #content .rowb td {background-color: rgba(24, 59, 88, 0.75); border: none;}
+
+#top10 #content table tr.colhead td {
+	background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent !important;
+	border: none;}
+
+/* ************************* */
+/* **********STAFF********** */
+/* ************************* */
+
+#staff #content .thin .box {
+	margin:20px auto;
+	width:90%;}
+
+#staff #content .thin .box table {
+	width:95%;
+	margin:8px auto;
+	background:url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png');}
+
+#staff h3 {
+	text-decoration:underline;}
+
+/* ************************ */
+/* **********BLOG********** */
+/* ************************ */
+#blog .box {
+	width: 80%;
+	margin: 0 auto;}
+
+#blog .head {
+	padding:4px;
+	background:url('https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png') repeat-x scroll 0 50% transparent;
+	color:#fff;
+	margin-bottom:7px;
+	font-size: 11px;}
+
+#blog #content ul {
+	margin-left: 25px;}
+
+#blog .head a {
+	color:#fff;}
+#blog .head a:hover {
+	color:#c7d6f1;
+	bottom:1px;
+	left:1px;
+	text-decoration:underline;}
+
+#blog .box {
+	background-color:#264059;
+	color: #fff;
+	border: 1px solid #003;}
+#blog .box a {
+	color:fff;}
+
+/* *********************************** */
+/* **********BB CODE BUTTONS********** */
+/* *********************************** */
+
+#bb_bold, #bb_und, #bb_ita, #bb_img, #bb_link, #bb_strk, #bb_h2, #bb_h3, #bb_h4, #bb_h5, #bb_h6, #bb_h1, #bb_color, #bb_tex, #bb_quote, #bb_list, #bb_spoil, #bb_cent, #bb_lef, #bb_righ, #bb_pre, #bb_youtube  {
+	display:inline-block;
+	height:16px;
+	width:16px;}
+
+span.size1 { font-size:0.75em; }
+span.size2 { font-size:1em; }
+span.size3 { font-size:1.25em; }
+span.size4 { font-size:1.5em; }
+span.size5 { font-size:1.75em; }
+span.size6 { font-size:2em; }
+span.size7 { font-size:2.25em; }
+span.size8 { font-size:2.5em; }
+span.size9 { font-size:2.75em; }
+span.size10 { font-size:3em; }
+
+ul.thin { margin:0px 0px 0px 25px; padding:0px; }
+ul.thin li { margin:0px 0px; padding:0px; }
+
+#bb_bold {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_bold.png');}
+#bb_und {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_underline.png');}
+#bb_ita {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_italic.png');}
+#bb_img {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/images.png');}
+#bb_link {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/link.png');}
+#bb_strk {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_strikethrough.png');}
+#bb_h1 {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_heading_1.png');}
+#bb_h2 {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_heading_2.png');}
+#bb_h3 {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_heading_3.png');}
+#bb_h4 {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_heading_4.png');}
+#bb_h5 {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_heading_5.png');}
+#bb_h6 {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_heading_6.png');}
+#bb_color {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/color_wheel.png');}
+#bb_tex {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/font.png');}
+#bb_quote {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/user_comment.png');}
+#bb_list {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_list_bullets.png');}
+#bb_spoil {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/eye.png');}
+#bb_cent {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_align_center.png');}
+#bb_lef {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_align_left.png');}
+#bb_righ {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/text_align_right.png');}
+#bb_pre {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/page_white_text.png');}
+#bb_youtube {background-image: URL('https://gazellegames.net/static/styles/blue_ambrose/images/icons/monitor.png');}
+
+.bbbutt {
+	background-color:#EEEEEE;
+	border:medium solid #365C80;
+	padding: 5px;
+	margin: 5px;
+	list-style:none;
+	display: inline-block;
+	cursor: default;}
+
+.bbbutt li {
+	display: inline;
+	margin-right: 2px;}
+
+.bbbutt li a{
+	border: none;
+	display: inline-block;
+	margin-bottom:-2px;}
+
+.bbbutt li select{height: 16px}
+#forums #content tbody td .bbbutt a:hover {border: hidden;}
+/* ************************* */
+/* **********INBOX********** */
+/* ************************* */
+
+#quickpost {
+	width:800px;
+	margin-bottom:8px;
+	margin-top:5px;}
+
+#inbox .box {background-color:#264059; color:#fff; border: 1px #003 solid;}
+#inbox .box a {color:#fff; font-weight:bold;}
+
+#inbox #searchbox {
+	padding:2px;
+	background-color:#426d93;
+	border:solid 1px #003;
+	margin-bottom:9px;
+	padding-left: 9px;}
+
+#inbox #messageform table {margin-bottom:9px;}
+
+#inbox .head {
+	padding:4px;
+	background:url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 50% transparent;
+	color:#fff;
+	margin-bottom:7px;}
+#inbox .head a {color:#fff;	font-weight:bold;}
+#inbox .head a.username {color:#fff; font-weight:bold;}
+
+#inbox table.comp {width: 100%;	border: 1px solid #003;}
+
+#inbox .comp h3 {margin: auto 0;}
+#inbox .comp tr {background: none;}
+#inbox .comp td {border: none;}
+
+#inbox #quickpost {width: 100%;}
+
+tr.unreadpm {color:#C7EB00;	background-color:#1c3248;}
+
+#inbox .unreadpm a {color:#C7EB00;}
+
+#inbox li {background-position:left -250px;}
+
+#staffpm .comp td {border:none;}
+
+#inbox .userclasses {
+	float:left;
+	width:120px;}
+
+/* strong.newnoti {background-color: #a91b16; padding: 4px; padding-right:5px; color: #fff}*/
+
+/* ************************* */
+/* *******UPLOAD FORM******* */
+/* ************************* */
+
+#upload #content table {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png');}
+#upload #content table td {background-color:rgba(24,59,88,0.85); border: none;}
+#upload #content table td.label {background-color:rgba(27, 47, 63, .85); border: none;}
+
+#upload #content table tr.colhead td {
+	background: url("https://gazellegames.net/static/styles/blue_ambrose/images/ColHeadGrad.png") repeat-x scroll 0 center transparent !important;
+	border: none;}
+
+#upload input:disabled{color:#999;}
+
+/* ************************* */
+/* ********PLATFORMS******** */
+/* ************************* */
+
+#artist #content table {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube2.png');}
+#artist #content table tr {background-color:rgba(24,59,88,0.85); border-bottom: 1px #003 solid;}
+
+#artist #content .box table td {background-color:transparent; border: none;}
+
+#artist #content table tr.rowa {background-color:rgba(27, 47, 63, 0.85); border: none;}
+#artist #content table tr.rowb {background-color:rgba(24, 59, 88, 0.85); border: none;}
+
+/* ************************* */
+/* *******INVITE TREE******* */
+/* ************************* */
+
+ul .invitetree {margin: 0px 0px 0px 25px;}
+
+.image_block element {width:200px!important;}
+
+/* ************************* */
+/* *******TM Stats******* */
+/* ************************* */
+
+#platform_name {text-decoration: underline;}
+
+/* ************************* */
+/* ******Gazelle Viewer***** */
+/* ************************* */
+
+.gazelles_art_display {
+        background: url('https://gazellegames.net/static/styles/blue_ambrose/images/companioncube-blue.png') !important;
+}
+.gazelles_art_display td {
+        border: none;
+        padding: 2px;
+        width: 25%;
+}
+.gazelles_art_display .gazelle_art {
+        height:180px;
+        background-size: 245px 180px;
+        background-color: white;
+}
+
+#gazelleview .gazellepic tbody, #gazelleview .gazellepic tr, #gazelleview .gazellepic td {
+   width: 100%;
+   border: 0px;
+}
+#gazelleview .gazellepic img {
+   display: block;
+   margin: 0 auto;
+   width: 100%;
+}
+#gazelleview #titlerow p {
+   font-size: 2em;
+   font-weight: bold;
+   text-align: center;
+   padding: 5px;
+}
+#gazelleview .gazelleinfo .rowtitle {
+   text-decoration: underline;
+}
+#gazelleview #gazelletags {
+   margin-left: 4px;
+}
+#gazelleview #usertagsrow #tags {
+  width: 25%;
+}
+#gazelleview #usertagsrow #newtag {
+   width: 120px;
+}
+
+/* ******************** */
+/* ****** Donate ****** */
+/* ******************** */
+
+#donate #donation_rewards ul {
+    margin-left: 45px;
+    font-size: 1.1em;
+}
+
+/* ******************************** */
+/* ********* Share Score ********** */
+/* ******************************** */
+
+#share_score .linkbox { font-weight: bold; font-size: 1.2em; }
+#share_score .colhead td { text-align: center; }
+#share_score_breakdown td.label { height: 5.5em; }
+
+#share_score .large_progress_bar .points {
+        font-weight: bold;
+        margin-left: 48.5%;
+        padding-top: 7px;
+        text-align: center;
+        z-index: 10;
+        color: black;
+        text-shadow:
+                -1px -1px 0 #eee,
+                1px -1px 0 #eee,
+                -1px 1px 0 #eee,
+                1px 1px 0 #eee;
+}
+#share_score .large_progress_bar .five_marker {
+        top: -17px;
+        right: 0;
+}
+#share_score .large_progress_bar .fifteen_marker {
+        top: 32px;
+        right: 0;
+}
+#share_score .large_progress_bar .main_section {
+	border-right: 2px solid white;
+	left:0;
+}
+#share_score .large_progress_bar .bonus_section {
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        background-color: rgba(177,232,0,0.2);
+        right: 0;
+}
+#seed_snatch_breakdown .large_progress_bar .main_bar {
+        background-color: rgb(123,255,158);
+        background-image: linear-gradient(to bottom, rgb(123,255,158), rgb(6,162,6));
+}
+#seed_time_breakdown .large_progress_bar .main_bar {
+        background-color: rgb(99, 228, 255);
+        background-image: linear-gradient(to bottom, rgb(99,228,255), rgb(0,115,150));
+}
+#seed_size_breakdown .large_progress_bar .main_bar {
+        background-color: #e8a3f0;
+        background-image: linear-gradient(to bottom, #e8a3f0, #ad23f4);
+}
+
+/* ******************************** */
+/* ************* Clans ************ */
+/* ******************************** */
+
+#clans .large_progress_bar {
+	font-size: 0}
+
+#clans .large_progress_bar .main_bar {
+	display: inline-block;
+	border-radius: 0px;
+	animation: none;
+}
+#clans .large_progress_bar .main_bar.clan_1_bar {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-color: rgb(106, 64, 40);
+	background-image: linear-gradient(to top, rgb(106, 64, 40), rgb(147, 109, 96));
+}
+#clans .large_progress_bar .main_bar.clan_2_bar {
+	background-color: rgb(107, 107, 107);
+	background-image: linear-gradient(to top, rgb(107, 107, 107), rgb(232, 232, 232));
+}
+#clans .large_progress_bar .main_bar.clan_3_bar {
+	background-color: rgb(244, 66, 66);
+	background-image: linear-gradient(to top, rgb(244, 66, 66), rgb(253, 235, 0));
+}
+#clans .large_progress_bar .main_bar.clan_4_bar {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background-color: rgb(21, 109, 226);
+	background-image: linear-gradient(to top, rgb(21, 109, 226), rgb(90,233,255));
+}
+
+/* ******************************** */
+/* * Item/Equip/Crafting Managers * */
+/* ******************************** */
+
+.items_manager {
+    float: left;
+    width: 80%;}
+.items_manager #itemString {
+    width: 300px;}
+.items_manager #loaditemstring {
+    float: right;
+    margin-top: -22px;}
+.items_manager #item_builder #gold_td {
+    width: 222px;}
+.items_manager #item_builder .wide_text {
+    width: 99%;
+    margin: 2px;}
+.items_manager #item_builder .wide_select {
+    width: 100px;
+    padding-left: 5px;}
+.items_manager #item_builder #onetimes_col {
+    width: 365px;}
+.items_manager #item_builder #attributes_col {
+    width: 406px;}
+.items_manager #item_builder #packitem1andor, .items_manager #item_builder #packitem2andor {
+    margin-left: 4px;}
+.items_manager #item_builder #packitem2andor {
+    margin-top: 2px;}
+.items_manager #item_builder #submit_col {
+   width: 100%;
+   text-align: center;}
+.items_manager #item_builder #submit_edit_buttons {
+    display: inline-block;}
+.items_manager #item_builder .right {
+    display: inline-block;
+    float: right;}
+.equipment_manager #equip_type_builder #equip_slots {
+    height: 150px;
+    width: auto;}
+.equipment_manager #equip_type_builder #submit_col {
+    text-align: center;}
+.equipment_manager #equip_type_builder #instructions ol {
+    padding-left: 15px;}
+.equipment_manager #equip_type_builder #instructions ul {
+    padding-left: 12px;}
+.crafting_manager #recipe_builder #id_divider {
+    min-width: 80px;}
+.crafting_manager #recipe_builder #recipe_outer_td {
+    padding: 0px;
+    margin: 0px;}
+.crafting_manager #recipe_builder #recipe_tbody #recipe td {
+    text-align: center;}
+.crafting_manager #recipe_builder #recipe_tbody #recipe td input {
+    height: 60px;
+    font-size: 14pt;
+    text-align: center;
+    background-size: auto 100%;}
+
+/*****************************************************
+******************* ALL ITEM PAGES *******************
+*****************************************************/
+
+/*Left Navigation Menu*/
+#items_navigation {
+	width: 200px;
+	float: left;
+	background: url('https://gazellegames.net/static/styles/game_room/images/shop/menubkg.png');
+	padding-bottom: 25px;
+	border-radius: 10px;
+	text-align: left;}
+
+#items_navigation h3 {
+	text-align: left;
+	left: 0;
+	display: block;
+	font-size: 1.5em;
+	border-bottom: 1px solid #c7c7c7;
+	font-weight: bold;
+	color: #fff;
+	margin: 0;}
+#items_navigation h3:nth-of-type(2) {
+	margin-top: 20px;}
+
+#items_navigation li {
+	list-style: none;
+	font-family: Roboto;
+	font-size: 1.1em;
+	padding: 5px 0;}
+#items_navigation li a {
+	color: rgba(255,255,255,0.8);
+	outline: 1px black;
+	border-bottom: none;}
+#items_navigation li#selected a {
+	font-weight: bold;
+	color: #b49629;}
+#items_navigation li a:hover {color: #b49629; text-decoration: none;}
+#items_navigation ul ul li {margin-left: 10px;}
+#items_navigation ul ul ul li {margin-left: 20px;}
+
+
+#items_list input,
+#items_list select,
+#items_list button {
+    background: url("https://gazellegames.net/static/styles/blue_ambrose/images/BlueGradBtn.png") repeat-x scroll 0 0 #2B2B2B;
+    border: 1px solid #888;
+    color: #FDFDFD;
+    padding: 2px 3px;}
+
+/**********************************************
+******************SHOP*************************
+**********************************************/
+
+#shop #content li.no_items,
+#loading {
+	list-style: none;
+	font-size: 2em;
+	text-align: left;
+	padding: 10px;
+	text-shadow: 2px 2px 2px #000; }
+#loading {	margin-left: 220px;}
+
+#shop #items_navigation {margin: 20px 0 0 0;}
+
+/***Shop Items***/
+#shop #items_list {
+	margin: 20px 0 0;
+	width: calc(100% - 220px);
+	text-align: center;
+	padding: 0;
+	float: right;
+	display: block;
+	height: 100%;}
+#shop li.item_li {
+	list-style: none;
+	background: rgba(39,65,90,.6);
+	margin: 5px;
+	width: 240px;
+	padding: 5px;
+	float: left;
+	height: 360px;
+	border-radius: 10px;}
+
+#shop .all_item_info,
+#shop h4,
+#shop .item_description,
+#shop #spacer_2,
+#shop #requirements {
+	visibility:hidden;
+	height: 0;
+	padding: 0;
+	margin: 0;}
+#shop h2 {display: none;}
+
+#shop h3.center {
+	vertical-align: middle;
+	font-size: 1.2em;
+	margin: 0 5%;
+	line-height: 1.2em;
+	height:40px;
+	width: 90%;
+	margin-top: -50px;}
+
+#shop .item_image_div {
+	height: 150px;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0px;}
+#shop .item_center.item_image {
+	max-width: 150px;
+	max-height: 150px;
+	margin-top: 15px;
+	vertical-align: middle;
+	display: block;}
+
+#shop #clickable {
+	height: 225px;
+	padding: 10px 0;}
+
+#shop li[class*="item_type_"] #clickable {width: 195px; margin: 40px auto 0;}
+#shop li.item_type_0 #clickable {background: url('https://gazellegames.net/static/styles/game_room/images/shop/redbkg.png') center left no-repeat;}
+#shop li.item_type_1 #clickable {background: url('https://gazellegames.net/static/styles/game_room/images/shop/bluebkg.png') center left no-repeat;}
+#shop li.item_type_2 #clickable {background: url('https://gazellegames.net/static/styles/game_room/images/shop/greenbkg.png') center left no-repeat;}
+#shop li.item_type_3 #clickable {background: url('https://gazellegames.net/static/styles/game_room/images/shop/yellowbkg.png') center left no-repeat;}
+#shop li.item_type_4 #clickable {background: url('https://gazellegames.net/static/styles/game_room/images/shop/greybkg.png') center left no-repeat;}
+#shop li.item_type_5 #clickable {background: url('https://gazellegames.net/static/styles/game_room/images/shop/lightbluebkg.png') left center no-repeat;}
+
+#shop .submit_section {width: auto; margin-top: -35px;}
+#shop .submit_section input, #shop .submit_section button  {padding: 4px;}
+
+#shop .item_description {
+	opacity: 0;
+	-moz-transition: opacity .5s;
+	-webkit-transition: opacity .5s;
+	transition: opacity .5s;}
+#shop #clickable:hover .item_description {
+	visibility: visible;
+	opacity: 1;
+	position: relative;
+	top: -152px;
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+	padding: 10px;
+	height: 130px;
+	text-align: left;
+	z-index: 2;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;}
+
+#shop #cost_info {
+	visibility: visible;
+	position: relative;
+	top: -65px;
+	width: 200px;
+	text-align: center;
+	display: block;
+	padding: 5px 0px;
+	color: #69c077;
+	font-size: 2em;
+	text-shadow: 2px 2px 5px #000;
+	font-weight: bold;
+	margin: 0 auto;}
+
+/***Confirmation Box***/
+.alertable-buttons button {line-height: 5px;}
+
+/***Avatar Preview***/
+#contentpreview {padding: 5px 10px;}
+
+/***New, Featured Items***/
+#shop .new_purchase_icon {
+	width: 70px;
+	height: 70px;
+	margin: 0;
+	padding: 0;
+	font-size: 35px;
+	font-family: "Comic Sans MS",helvetica,sans-serif;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px #000;
+	color: #19ea19;
+	text-align: left;
+	vertical-align: top;
+	position: absolute;}
+#shop li.new {background: rgba(39,65,90,0.6) url('https://gazellegames.net/static/styles/game_room/images/shop/new.png') top left no-repeat;}
+
+#shop li.featured {
+	display: block;
+	width: 370px;}
+#shop .featured {background: rgba(39,65,90,.6) url('https://gazellegames.net/static/styles/game_room/images/shop/featured.png') top left no-repeat !important;}
+#shop .featured  {
+	visibility: visible;
+	height: auto;}
+#shop li.featured #clickable {width: 100%; margin: 25px auto 0;}
+#shop .featured h3.center {
+	border-bottom: 1px solid #fff;
+	display: block;
+	height: auto;
+	margin-left: 20px;
+	margin-top: -35px;}
+#shop .featured .item_description,
+#shop .featured #clickable:hover .item_description {
+	opacity: 1;
+	visibility: visible;
+	margin-left: 205px;
+	text-align: left;
+	margin-top: -240px;
+	top: 0px;
+	display: block;
+	height: 220px;
+	padding: 0;
+	background-color: transparent;}
+
+#shop .featured #cost_info {margin: 0;}
+#shop .featured .submit_section {
+	margin: -30px 0 0;
+	text-align: left;}
+#shop .featured .all_item_info {display: none;}
+
+#shop .more_info p.center,
+#shop .more_info #stock_info,
+#shop .more_info p,
+#shop .more_info #extended_info,
+#shop .more_info #spacer_2 {
+	visibility: visible;
+	height: auto; }
+
+/***More Info Popup***/
+.more_info {width: 100%;}
+.more_info .col_1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	padding: 10px 0 0 20px;}
+.more_info .col_2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 200px;
+	padding: 0 10px 0 60px;}
+.more_info .info_box {min-height: auto; height: auto;}
+.more_info .info_box span.label {
+	display: block;
+  font-size: 1.1em;
+  color: #b49629;
+	width: 100%;
+	border-bottom: 1px solid rgba(180, 150, 41,.5);
+	text-align: left;
+	height: auto;
+	min-height: auto;
+	padding-top: 15px;}
+
+.more_info .info_cost {text-align: center;}
+.more_info .info_cost #cost {
+	font-size: 2em;
+	text-shadow: 2px 2px 5px #000;
+	font-weight: bold;}
+.more_info .info_cost #cost {color: #69c077;}
+
+.more_info .info_sub_basic {padding-bottom: 6px;}
+.more_info p {padding-top: 0px;}
+.more_info #img_box img {max-width: 200px; width: 200px; height: auto;}
+
+.ui-dialog {
+	padding: 0px;
+	box-shadow: 2px 2px 10px #000;
+	font-family: Roboto;}
+.ui-widget-header {
+	background: #0E1720;
+	border: none;
+	color: #c6e6f6;
+	border-radius: 0px;
+	border-bottom: 1px #2b4e66 solid;}
+.ui-widget-content {
+	color: #fff;
+	background: rgba(39,65,90,1);
+	border: none;}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close {
+	background: #1c3145;
+	border: 1px solid #1c3145;
+	color: #ccc;}
+.ui-widget-content a {color: #b49629;}
+.ui-dialog table {background: none;}
+
+#shop #footer {position: relative;}
+
+}/**********************************
+************INVENTORY**************
+**********************************/
+
+.inventory h2 {visibility: hidden;}
+#user .inventory .center {padding: 0;}
+.inventory #items_navigation {margin-top:10px;}
+
+/***Inventory Items***/
+.inventory .featured {background: rgba(39,65,90,.6) url('https://gazellegames.net/static/styles/blue_ambrose/images/featured.png') top left no-repeat !important;}
+
+.inventory #items_list {
+	width: calc(100% - 220px);
+	padding: 0;
+	float: right;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;}
+
+.inventory #content li.item_li {
+	list-style: none;
+	background: rgba(39,65,90,.6);
+	margin: 5px;
+	width: 47%;
+	padding: 15px 5px;
+	border-radius: 10px;
+	float: left;
+	display: block;}
+
+ .inventory h3.center {
+	vertical-align: middle;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	height:40px;
+	font-size: 1.4em;
+	text-align: left;
+	margin-left: 120px;}
+
+.inventory .item_image_div {
+	height: 100px;
+	width: 100px;
+	float: left;}
+.inventory .item_center.item_image {
+	width: 100px;
+	height: auto;
+	max-height: 150px;
+	margin-left: 10px;
+	margin-top: -45px;
+	vertical-align: top;
+	display: block;}
+
+.inventory #content li.item_li p,
+.inventory #content li.item_li #life_info,
+.inventory #content li.item_li h4  {
+	text-align: left;
+	padding: 0;
+	margin: 0 0 0 120px;}
+
+.inventory h4 {
+    font-size: 1.1em;
+    color: #b49629;}
+
+.inventory #content li.item_li .item_description {
+	margin: -20px 5px 15px 120px !important;
+	display: block;
+	padding: 0;
+	background-color: transparent;
+  text-align: left;}
+#content li.item_li a {color: #b49629;}
+
+.inventory #one_time_inputs input {width: 200px; margin-left: 120px; margin-bottom: 10px;}
+.inventory ##item_use_amount input {
+	width: 50px;
+	margin-bottom: 10px;}
+
+.inventory .submit_section {width: auto; margin: 0 0 0 120px;}
+.inventory .submit_section input, .inventory .submit_section button {
+
+	padding: 2px;
+	height: auto;}
+
+.inventory #one_time_inputs .title_preview  {
+    width: 60px;
+    margin: 5px;
+    padding: 2px;
+    height: 24px;
+    margin-left: 120px;}
+
+.inventory .top_linkbox {display: none;}
+.inventory .bottom_linkbox {
+	clear: both;
+	color: #fff;
+	margin-left: 220px;}
+
+.inventory .trash_icon {padding: 3px;}
+
+.inventory .save_message {
+    display: block;
+    width: calc(100% - 242px);
+	line-height: 1.6em;
+    margin: 30px 5px 10px;
+	background: rgb(29,48,67);
+    padding: 5px;
+    border-radius: 10px;
+	filter: drop-shadow(2px 2px 10px #000);
+	float: right;
+	color: #fff;
+	border: none;}
+
+.inventory .save_message span {
+	text-align: center;
+	display: block;
+	font-size: 1.8em;
+	border-bottom: 1px solid #c7c7c7;
+	font-weight: bold;
+	color: #fff;
+	margin: 0 auto 10px;
+	width: 100%;}
+
+.inventory .item_description img {
+    max-width: 100% !important;}
+
+/***Books***/
+.book_dialog {color: #fff}
+.book {
+	margin: 10px;
+	padding: 25px 75px;
+	filter: drop-shadow(2px 2px 5px #000);}
+.book .book_content {
+	padding: 25px;
+	box-shadow: 0px 0px 5px #000;
+	background-color: #2b4e66;}
+.book .page {background-color: #2b4e66;}
+.book span.size7 {
+	border-bottom: 2px solid #fff;
+	width: 100%;
+	display: block;}
+
+.book blockquote {background-color: #1c3145;}
+
+.page_break {margin-bottom: 20px; border-top: #fff solid 1px; display: block; width: 100%;}
+.page_break::after {content: attr(id);}
+
+/*************************************************
+********* Crafting / Trading / Equipment *********
+*************************************************/
+
+#crafting_panel .item img.equipment_level,
+#equipment .item img.equipment_level,
+#trading_panel .item img.equipment_level {
+    position: absolute;
+    top: 2px;
+	left: 2px;}
+
+#equipment .item img.unequip_warning {
+	position: absolute;
+	top: 1px;
+	left: 3px;}
+
+/**************************************************
+**************** Equipment Panel ******************
+**************************************************/
+
+#equipment h2 {visibility: hidden;}
+
+#equipment #items {
+	width: 200px;
+	float: left;
+	margin: 0 10px;
+	position: relative;
+	padding: 3px 0px 3px 3px;
+	height: 800px;
+	background-color: rgba(0,0,0,.7);
+	text-align: center;
+	overflow: hidden;}
+
+/* For top and bottom highlights when hovering over item slot */
+#equipment #items_inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;}
+#equipment .top_highlight #items_inner {
+	-moz-box-shadow: inset 0 10px 10px -6px #a07307;
+	-webkit-box-shadow: inset 0 10px 10px -6px #a07307;
+	box-shadow: inset 0 10px 10px -6px #a07307;}
+#equipment .bottom_highlight #items_inner {
+	-moz-box-shadow: inset 0 -10px 10px -6px #a07307;
+	-webkit-box-shadow: inset 0 -10px 10px -6px #a07307;
+	box-shadow: inset 0 -10px 10px -6px #a07307;}
+#equipment .top_highlight.bottom_highlight #items_inner {
+	-moz-box-shadow: inset 0 10px 10px -6px #a07307, inset 0 -10px 10px -6px #a07307;
+	-webkit-box-shadow: inset 0 10px 10px -6px #a07307, inset 0 -10px 10px -6px #a07307;
+	box-shadow: inset 0 10px 10px -6px #a07307, inset 0 -10px 10px -6px #a07307;}
+
+#equipment #purchase {margin-top: 35px;}
+
+#equipment #items div {
+	display: inline-block;
+	text-align: center;}
+#equipment #items #items-wrapper {
+	margin-top: 0;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	float: left;
+	padding: 0;}
+#equipment .item {
+	list-style-type: none;
+	margin: 4px;
+	padding: 4px;
+	float: left;
+	width: 79px;
+	height: 79px;
+	overflow: hidden;
+	background: url('https://gazellegames.net/static/styles/game_room/images/shop/itempattern.png') repeat 0 0 #1b1b1d;
+	background-color: #1c1c1c;
+	text-align: center;
+	position: relative;
+	font-weight: bold;
+	color: #999;
+	border: 3px solid #000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+	box-shadow: 3px 3px 8px rgba(0,0,0,0.7);}
+
+#equipment .item h3 {
+	position: absolute;
+	bottom: 2px;
+	width: 79px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,	-1px 1px 0 #000, 1px 1px 0 #000, 0 0 6px #000;}
+
+#equipment .item img {
+	max-width: 79px;
+	max-height: 79px;
+	padding: 3px;}
+
+#equipment .item:hover {
+	cursor: grab;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;}
+
+#equipment #equip_panel {
+	background: url('https://gazellegames.net/static/styles/game_room/images/shop/equipment_panel.jpg');
+	height: 800px;
+	width: 550px;
+	-moz-box-shadow: 0px 0px 10px 3px black;
+	-webkit-box-shadow: 0px 0px 10px 3px black;
+	box-shadow: 0px 0px 10px 3px black;
+  margin-top: 0px;}
+
+#equipment #unequip_all {
+	height: 2.5rem;
+	margin: 745px 0 0 0px;
+	padding: 10px;
+	font-size: 1rem;
+	font-weight: bold;
+	box-shadow: 1px 1px 3px black;
+	background-color: rgba(255, 202, 133, 0.4);
+	background-image: none;}
+#equipment #unequip_all:disabled,
+#equipment #unequip_all:hover:disabled {
+	background-color: rgba(207, 198, 187, 0.4);
+	box-shadow: none;
+	border: 1px solid #999999;}
+#equipment #unequip_all:hover:enabled {
+	cursor: pointer;
+	box-shadow: 3px 3px 3px black;
+	filter: brightness(95%);}
+
+#equipment .itemslot {
+	width: 106px;
+	height: 106px;
+	position: absolute;}
+#equipment .ui-widget-content {background: transparent;}
+#equipment .itemslot.inactive {background: rgba(117,117,117,0.8);}
+#equipment .itemslot .item {
+	width: 91px;
+	height: 91px;
+	border-width: 2px;
+	margin: 1px;
+	top: 5px;}
+#equipment .itemslot .item img {
+	max-width: 87px;
+	max-height: 87px;
+	padding: 2px;}
+#equipment .itemslot .item h3 {
+	width: 89px;
+	bottom: -6px;}
+
+#equipment {margin: 0 auto; text-align: center; height: 900px;}
+#equipment #equip_panel {float: none; display: inline-block;}
+
+#equipment div.itemslot.highlight {
+	-moz-box-shadow: 0px 0px 15px rgba(196, 157, 51, 0.8);
+	-webkit-box-shadow: 0px 0px 15px rgba(196, 157, 51, 0.8);
+	box-shadow: 0px 0px 15px rgba(196, 157, 51, 0.8);}
+#equipment .item.highlight {
+	border-color: #5e4819;
+	-moz-box-shadow: 0px 0px 3px 1px #aa7e16;
+	-webkit-box-shadow: 0px 0px 3px 1px #aa7e16;
+	box-shadow: 0px 0px 3px 1px #aa7e16;}
+#equipment #avatar_preview {
+	margin-top: 15px;
+	filter: drop-shadow(0px 0px 10px black);}
+
+/* Position item slots */
+#equipment .itemslot#slot_1 {margin: 108px 0 0 217px;}
+#equipment .itemslot#slot_9 {margin: 227px 0 0 217px;}
+#equipment .itemslot#slot_2 {margin: 346px 0 0 217px;}
+#equipment .itemslot#slot_4 {margin: 465px 0 0 217px;}
+#equipment .itemslot#slot_6 {margin: 584px 0 0 217px;}
+#equipment .itemslot#slot_5 {margin: 333px 0 0 98px;}
+#equipment .itemslot#slot_3 {margin: 333px 0 0 336px;}
+#equipment .itemslot#slot_11 {margin: 215px 0 0 61px;}
+#equipment .itemslot#slot_10 {margin: 215px 0 0 373px;}
+#equipment .itemslot#slot_8 {margin: 451px 0 0 61px;}
+#equipment .itemslot#slot_7 {margin: 451px 0 0 373px;}
+#equipment .itemslot#slot_13 {margin: 57px 0 0 23px;}
+#equipment .itemslot#slot_12 {margin: 56px 0 0 389px;}
+#equipment .itemslot#slot_14 {margin: 637px 0 0 20px;}
+#equipment .itemslot#slot_15 {margin: 637px 0 0 414px;}
+
+/***************************************
+************ Crafting Panel ************
+***************************************/
+
+#crafting_panel h2 {visibility: hidden;}
+
+/* Crafting Panel (the panel with all your stuff) */
+#crafting_panel #items {
+	width: 215px;
+	float: left;
+	margin: 0px 5px;
+	position: relative;
+	padding: 3px 0px 3px 3px;
+	height: 368px;
+	background-color: rgba(0,0,0,.7);
+	text-align: center;
+	overflow: hidden;}
+#crafting_panel #items #items-wrapper {
+	margin-top: 0;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	float: left;
+	padding: 0;}
+
+#crafting_panel #search_query {margin: 5px;}
+#crafting_panel span {color: #fff;}
+
+#crafting_panel .item {
+	list-style-type: none;
+	margin: 1px;
+	padding: 4px;
+	float: left;
+	width: 90px;
+	height: 90px;
+	overflow: hidden;
+	background: url('https://gazellegames.net/static/styles/game_room/images/shop/itempattern.png') repeat 0 0 #1b1b1d;
+	background-color: #1c1c1c;
+	text-align: center;
+	position: relative;
+	font-weight: bold;
+	color: #999;
+	border: 3px solid #000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+	box-shadow: 3px 3px 8px rgba(0,0,0,0.7);}
+#crafting_panel #items div {
+	display: inline-block;
+	text-align: center;}
+
+#crafting_panel .item h3 {
+	position: absolute;
+	bottom: 2px;
+	width: 90px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 6px #000;
+	color: #fff;}
+
+#crafting_panel .item img {
+	max-width: 94px;
+	max-height: 94px;
+	padding: 3px;}
+#crafting_panel .item:hover {
+	cursor: grab;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;}
+
+/* The combining panel */
+#crafting_panel #slots_panel {
+	background: url('https://gazellegames.net/static/styles/game_room/images/shop/crafting_panel.jpg');
+	height: 370px;
+	width: 550px;
+	margin: 0;
+  padding: 0;
+	-moz-box-shadow: 0px 0px 10px 3px black;
+	-webkit-box-shadow: 0px 0px 10px 3px black;
+	box-shadow: 0px 0px 10px 3px black;
+margin-bottom: 50px;}
+
+#crafting_panel .itemslot {
+	width: 106px;
+	height: 106px;
+	position: absolute;}
+
+#crafting_panel .ui-widget-content {background: transparent;}
+
+#crafting_panel .itemslot .item {
+	width: 91px;
+	height: 91px;
+	border-width: 2px;
+	margin: 1px;}
+#crafting_panel .itemslot .item img {
+	max-width: 87px;
+	max-height: 87px;
+	padding: 2px;}
+#crafting_panel .itemslot .item h3 {
+	width: 89px;
+	bottom: -6px;}
+
+/* Position item slots */
+#crafting_panel .itemslot#slot_0 {margin: 13px 0 0 13px;}
+#crafting_panel .itemslot#slot_1 {margin: 13px 0 0 132px;}
+#crafting_panel .itemslot#slot_2 {margin: 13px 0 0 251px;}
+#crafting_panel .itemslot#slot_3 {margin: 132px 0 0 13px;}
+#crafting_panel .itemslot#slot_4 {margin: 132px 0 0 132px;}
+#crafting_panel .itemslot#slot_5 {margin: 132px 0 0 251px;}
+#crafting_panel .itemslot#slot_6 {margin: 251px 0 0 13px;}
+#crafting_panel .itemslot#slot_7 {margin: 251px 0 0 132px;}
+#crafting_panel .itemslot#slot_8 {margin: 251px 0 0 251px;}
+#crafting_panel .itemslot#CraftingResult {margin: 131px 0 0 431px;}
+
+/* Ability icons */
+#crafting_panel ul#abilities li {
+	float: left;
+	width: 64px;
+	height: 64px;
+	padding: 0;
+	margin: 0;}
+#crafting_panel li#campfire {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/campfire.png') no-repeat left;}
+#crafting_panel li#campfire.active {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/campfire_activated.png') no-repeat left;}
+#crafting_panel li#forge {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/forge.png') no-repeat left;}
+#crafting_panel li#forge.active {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/forge_activated.png') no-repeat left;}
+#crafting_panel li#enchanting {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/enchant.png') no-repeat left;}
+#crafting_panel li#enchanting.active {background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/enchant_activated.png');}
+
+/* Crafting books */
+#crafting_recipes {
+	height: 290px;
+	width: 100%;
+	max-width: 1100px;
+	min-width: 200px;
+	padding: 3px;
+	margin: 0 auto;
+	background-color: rgba(0,13,19,.7);
+	overflow: hidden;}
+#crafting_recipes #items_list {
+	margin-top: 0;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: relative;}
+#crafting_recipes li.item_li {
+	list-style: none;
+	position: relative;
+	float: left;
+	height: 250px;
+	width: 200px;
+	margin: 0 20px 20px 0;
+	cursor: pointer;
+	background: url('https://gazellegames.net/static/styles/game_room/images/shop/yellowbkg.png') center left no-repeat;}
+#crafting_recipes li.item_li > div { width: 160px; padding-left: 20px; }
+#crafting_recipes h3 {
+	position: absolute;
+	top: 10px;
+	width: 160px;
+	z-index: 10;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 6px #000;}
+#crafting_recipes .item_image_div {
+	height: 150px;
+	width: 160px;
+	position: absolute;
+	top: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;}
+#crafting_recipes .item_center.item_image {
+	max-width: 150px;
+	max-height: 150px;
+	vertical-align: middle;
+	display: block;}
+
+.item.used {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/shop/itempattern.png') repeat, url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/equipment_used.png') 95% 5% no-repeat #1b1b1d !important;}
+.item.broken {background: url('https://gazellegames.net/static/styles/blue_ambrose/images/shop/itempattern.png') repeat, url('https://gazellegames.net/static/styles/blue_ambrose/images/icons/equipment_broken.png') 95% 5% no-repeat #1b1b1d !important;}
+
+/***Out of Stock Items**/
+#shop li.item_li.nostock #clickable .item_description {
+	visibility: visible;
+	opacity: 1;
+	position: relative;
+	top: -102px;
+	background: url(images/soldout.png) no-repeat;
+	background-size: contain;
+	padding: 10px;
+	height: 130px;
+	text-indent: -1000px;
+	z-index: 2;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	left: 2px;
+	width: 166px;}
+#shop li.item_li.nostock .submit_section {margin-top: -50px;}
+
+#shop li.item_li.nostock #clickable .item_description,
+#shop li.item_li.nostock #clickable .item_description a,
+#shop li.item_li.nostock #clickable .item_description span {
+	color: transparent !important;}
+
+#shop li.item_li.featured.nostock #clickable .item_description {
+	visibility: visible;
+	opacity: 1;
+	position: relative;
+	top: -102px;
+	background: url(images/soldout.png) no-repeat;
+	background-size: contain;
+	padding: 10px;
+	height: 130px;
+	text-indent: -1000px;
+	z-index: 2;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	left: 100px;
+	width: 140px;}
+#shop li.item_li.featured.nostock .submit_section {margin-top: -30px;}
+
+marquee {width: 100px;}
+#forums marquee {width: auto;}
+#forums .forum_post .colhead_dark marquee {max-width: 75%;}
+
+#forums .forum_post .colhead_dark div[style="float:left;"] {width: 80%;}
+#forums .forum_post .colhead_dark td {text-align: left;}
+
+/* Stickies */
+.sticky #groupplatform:before {
+	content: "";
+	background-image: url(images/icons/sticky1.png);
+	background-size: cover;
+	height: 14px;
+	width: 15px;
+	display: inline-block;
+	margin: 0 5px;}
+
+.sticky td {background-color: #255689;}
+
+#torrents #content .box_main_pack .center,
+#torrents #content .box_pack .center {
+	padding: 0;}
+
+#torrents .hovereffect {height: 100px !important;}
+#torrents .hovereffect .img_responsive {
+    display: block;
+    position: relative;
+    width: 207px;
+	max-width: 207px !important;
+	height: 100%;
+	background-size: cover;}
+
+#shop .owned {background: rgba(39,65,90,0.6) url('https://gazellegames.net/static/styles/game_room/images/shop/owned.png') top left no-repeat !important;}
+
+/*Gold Generation Box*/
+.box_gold td {
+	text-align: center;
+	padding: 10px 5px;}
+
+#user .box_gold .colhead td.label {background-color: inherit;}
+#user .box_gold .colhead {border-radius: 0px;}
+#user .box_gold .colhead td {padding: 5px;}
+
+.box_gold table {
+	height: 176px;
+	position: relative;
+	overflow-x: hidden;
+	display: block;
+	background: #264059 !important;
+	border: none !important;}
+
+.box_gold tr.total td {border-top: 1px solid #c6e6f6 !important;}
+.box_gold tr.total td.label {border-top: none;}
+
+/*** Fighting Stats Box ***/
+.box_fights_stats .stat_bar progress {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	width: 80px;
+	height: 13px;}
+
+.box_fights_stats .stat_bar progress::-webkit-progress-bar {
+	background-color: #ddd;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;}
+
+.box_fights_stats .stat_bar progress::-webkit-progress-value {
+	box-shadow:
+		inset 0px 11px 8px -10px #fff,
+		inset 0px -11px 8px -10px #000,
+		1px 0 5px 1px rgba(0, 0, 0, 0.5);
+	border-radius: 1px;}
+
+.box_fights_stats .stat_bar progress::-moz-progress-bar {
+	box-shadow:
+		inset 0px 11px 8px -10px #fff,
+		inset 0px -11px 8px -10px #000,
+		1px 0 5px 1px rgba(0, 0, 0, 0.5);
+	border-radius: 1px;}
+
+.box_fights_stats .icon_stat img {
+	margin: 0;
+	border: 0;
+}
+
+.box_fights_stats .stat_bar progress.experience_bar {color: #0085fe;}
+.box_fights_stats .stat_bar progress.experience_bar::-webkit-progress-value {background-color: #0085fe;}
+.box_fights_stats .stat_bar progress.experience_bar::-moz-progress-bar {background-color: #0085fe;}
+.box_fights_stats .stat_bar progress.health_bar {color: #fe0000;}
+.box_fights_stats .stat_bar progress.health_bar::-webkit-progress-value {background-color: #fe0000;}
+.box_fights_stats .stat_bar progress.health_bar::-moz-progress-bar {background-color: #fe0000;}
+
+#user_fight_attacks .attributes {font-size: 0.9em;}
+
+
+.sidebar #freeleech .group_torrent:hover {background-color: transparent;}
+.sidebar #freeleech li.group_torrent {
+	width: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: -10px;}
+
+#rules .required_ratio td {
+    width: 23%;
+    text-align: center;}
+#rules .required_ratio td:first-of-type {
+    width: 30%;
+    text-align: left;}
+#rules .required_ratio #ratio_free {font-size: 2em;}
+
+.freeleech_shop_main, .global_buffs_shop_main {
+    width: 770px;
+    float: right;
+    margin: 20px 0;}
+
+#styleurl {width: 500px;}
+
+#description {width: 97%;}
+#description blockquote {width: 96%;}
+#description blockquote pre {width: 97%;}
+
+#avatarpreview_dialog .avatar div {
+    width: 150px;
+    height: 150px;}
+
+.badge_icon.tooltip {
+    border: none;
+	margin: 8px;}
+
+.username_badges .badge_icon.tooltip {
+	margin: 0 2px;}
+
+ #nav_donate {
+	margin-top: auto !important;
+  	float: right !important;
+	margin-right: 18px;}
+
+#nav_userinfo {
+	width: 100%;
+	padding-bottom: 16px;}
+
+#wiki td .postlist  {
+	padding: 4px !important;
+	width: auto !important;}
+
+#wiki .bbcode_table td {
+	vertical-align: top;}
+
+#community_stats ul li:first-child {
+	font-weight: bold;
+}
+
+/**************************************************
+************* Adventure Club Tools ****************
+**************************************************/
+.attacks_manager #attributes ul,
+.monsters_manager ul.inline_list,
+#adventureclub ul.inline_list {
+     padding-left: 0;}
+.attacks_manager #attributes ul li,
+.monsters_manager ul.inline_list li,
+#adventureclub ul.inline_list li {
+     list-style: none;
+     padding: 2px;
+     width: 19%;
+     display: inline-block;}
+.attacks_manager #attributes ul li input:checked + label,
+.monsters_manager ul.inline_list li input:checked + label {
+     color: yellowgreen;
+     text-decoration: underline;}
+.monsters_manager #attributes_div tr:not(:last-child) td {
+	 border-bottom: 1px solid #036;}
+.monsters_manager .wide_text {
+	width: 98%;}
+
+#adventureclub tr.sub_row {
+     font-size: 0.9em;
+	 background-color: rgba(255, 255, 255, 0.2);}
+#adventureclub .label_right {width: 8%;}
+#adventureclub ul.inline_list li {width: 15%;}
+#adventureclub .effects_div {float: left; padding-right: 1.5em;}
+#adventureclub td.image_col {text-align: center;}
+#adventureclub td.image_col.hidden {width: 0;}
+#adventureclub td.image_col.show {width: 14%;}
+#adventureclub td.image_col img {max-height: 200px; max-width: 100% !important;}
+
+/****************************************************
+************ Long Term Seeding Tokens ***************
+****************************************************/
+#seedtime_tokens .large_progress_bar .last_drop {
+	top: 32px;
+	left: 0;}
+#seedtime_tokens .large_progress_bar .next_drop {
+	top: 32px;
+	right: 0;}
+#seedtime_tokens .large_progress_bar .points {
+	font-weight: bold;
+	margin-left: 48.5%;
+	padding-top: 7px;
+	text-align: center;
+	z-index: 10;
+	text-shadow:
+		 -1px -1px 0 #333,
+		 1px -1px 0 #333,
+		 -1px 1px 0 #333,
+		 1px 1px 0 #333;}
+#seedtime_tokens .large_progress_bar.month8 .main_bar {
+	background-color: rgb(99, 228, 255);
+	background-image: linear-gradient(to bottom, rgb(99,228,255), rgb(0,115,150));}
+
+/**********************************************
+****************SKILL POINTS*******************
+**********************************************/
+.fight_skill_points div#content {max-width: 940px !important;}
+#fight_skill_points_assign table {
+	max-width: 700px;
+	float: right;
+	font-size: 1.20rem;
+	border: none;
+	background: url('https://gazellegames.net/static/styles/game_room/images/trading_table.png') repeat 0 0;}
+#fight_skill_points_assign table td {border: none;}
+
+#fight_skill_points_assign table tr.colhead {
+	height: 2.3em;
+	font-size: 1.2rem;
+	text-decoration: underline;
+	box-shadow: -3px 3px 5px #000;
+	background: linear-gradient(rgba(104, 50, 0, 0.9), rgba(68, 33, 0, 0.6)),
+				url('https://gazellegames.net/static/styles/game_room/images/trading_table.png') repeat 0 0;}
+#user #content #fight_skill_points_assign table tr.colhead td {background: none;}
+
+#fight_skill_points_assign table tr.colhead td:nth-child(1) {
+	width: 68px;}
+#fight_skill_points_assign table tr.colhead td:nth-child(2) {
+	width: 140px;}
+#fight_skill_points_assign table tr.colhead td:nth-child(3),
+#fight_skill_points_assign table tr.colhead td:nth-child(4),
+#fight_skill_points_assign table tr.colhead td:nth-child(5) {
+	text-align: center;
+	width: 90px;}
+#fight_skill_points_assign tr.skill_tr {
+	height: 60px;}
+#fight_skill_points_assign .achievement_image img {
+	padding-left: 15px;
+	filter: sepia(90%);}
+
+#fight_skill_points_assign .stat_label span {
+	font-size: 1.5rem;
+	text-shadow:
+	-1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000,
+	2px 2px 5px #000;}
+#fight_skill_points_assign .stat_label img {
+	float: right;
+	padding-top: 6px;}
+
+#fight_skill_points_assign .points {
+	font-size: 2.4rem;
+	text-align: center;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000,
+		2px 2px 5px #000;}
+#fight_skill_points_assign .plus_sign {
+	font-size: 0.5em;
+	margin-left: -10px;
+	padding-right: 5px;}
+
+#fight_skill_points_assign .points.base_points {
+	color: #ffe3bf;}
+#fight_skill_points_assign .points.skill_points {
+	color: #ffca85;}
+#fight_skill_points_assign .points.total_points {
+	color: #ffa128;}
+
+#fight_skill_points_assign .buttons {
+	text-align: center;}
+#fight_skill_points_assign .skill_tr input[type=button] {
+	font-size: 2rem;
+	font-weight: bold;
+	background: rgb(255, 202, 133, 0.25);
+	box-shadow: 1px 1px 3px black;
+	height: 43px;
+	width: 35px;
+	padding: 5px;}
+#fight_skill_points_assign .skill_tr input[type=button]:disabled {
+	color: lightgrey;
+	background: rgb(230, 230, 230, 0.2);
+	box-shadow: none;}
+#fight_skill_points_assign .skill_tr input[type=button]:hover:disabled {
+	box-shadow: none;
+	border: 1px solid #999999;}
+#fight_skill_points_assign .skill_tr input[type=button]:hover {
+	box-shadow: 3px 3px 3px black;}
+#fight_skill_points_assign .skill_tr input[type=button].stat_change_increase:hover:enabled {
+	color: #ace660;}
+#fight_skill_points_assign .skill_tr input[type=button].stat_change_decrease {
+	margin-left: 8px;}
+#fight_skill_points_assign .skill_tr input[type=button].stat_change_decrease:hover:enabled {
+	color: #ff3c00;}
+
+#fight_skill_points_assign tr.submit_section {
+	border-top: 2px ridge rgba(255, 255, 255, 0.25);}
+#fight_skill_points_assign tr.submit_section span {
+	vertical-align: middle;}
+#fight_skill_points_assign tr.submit_section td {
+	padding: 15px;}
+#fight_skill_points_assign tr.submit_section #assignable_skill_points {
+	font-size: 2.2rem;}
+
+#fight_skill_points_assign #submit {
+	float: right;
+	margin-right: 5px;
+	width: 80px;
+	height: 3em;
+	font-weight: bold;
+	font-size: 1rem;
+	box-shadow: 1px 1px 3px black;
+	background-color: rgba(255, 202, 133, 0.4);
+	background-image: none;}
+#fight_skill_points_assign #submit:disabled,
+#fight_skill_points_assign #submit:hover:disabled {
+	background-color: rgba(207, 198, 187, 0.4);
+	box-shadow: none;
+	border: 1px solid #999999;}
+#fight_skill_points_assign #submit:hover {
+	box-shadow: 3px 3px 3px black;
+	filter: brightness(95%);}
+
+/**********************************************
+*************** BACKPACK **********************
+**********************************************/
+#backpack #items-wrapper {
+	margin-top: 0;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	float: left;
+	padding: 0;}
+#backpack #items div {
+	display: inline-block;
+	text-align: center;}
+
+#backpack .item {
+	list-style-type: none;
+	margin: 4px;
+	padding: 4px;
+	float: left;
+	width: 94px;
+	height: 94px;
+	overflow: hidden;
+	background-color: #1c1c1c;
+	text-align: center;
+	position: relative;
+	font-weight: bold;
+	color: #999;
+	border: 3px solid #000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+	box-shadow: 3px 3px 8px rgba(0,0,0,0.7);}
+#backpack .item h3 {
+	position: absolute;
+	bottom: 2px;
+	width: 94px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 6px #000;}
+#backpack .item img {
+	max-width: 94px;
+	max-height: 94px;
+	padding: 3px;}
+#backpack .item:hover {
+	cursor: grab;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;}
+
+
+/*** Items panel (the panel with all your items) ***/
+#backpack #items {
+	width: 350px;
+	float: left;
+	margin: 0 10px 15px;
+	position: relative;
+	padding: 3px 0px 3px 3px;
+	height: 650px;
+	background-color: rgba(0,0,0,.7);
+	text-align: center;
+	overflow: hidden;}
+
+/* The backpack slots */
+#backpack #slots_panel {
+	width: 375px;
+	float: right;
+	margin: 0 10px 15px;
+	padding: 3px 0px 3px 3px;
+	min-height: 650px;
+	background-color: rgba(25, 17, 7, 0.95);
+	border: 2px solid #969696;
+	border-radius: 4px;
+	box-shadow: inset 0px 0px 4px 2px black, 0px 0px 5px 2px black;}
+
+#backpack #slots_panel ul li {
+	padding: 4px;}
+
+#backpack #slots_header {
+	height: 60px;
+	position: relative;
+	padding-left: 100px;
+	margin-bottom: 5px;
+	border-bottom: 2px solid #969696;}
+#backpack #slots_header img {
+	position: absolute;
+	top: -40px;
+	left: -20px;}
+#backpack #slots_header span {
+	color: #fff2e0;
+	font-size: 3em;
+	font-weight: bold;
+	font-family: serif;
+	line-height: 55px;}
+
+#backpack .itemslot {
+	list-style-type: none;
+	margin: 4px;
+	width: 106px;
+	height: 106px;
+	float: left;
+	position: relative;
+	background-color: rgba(103, 71, 26, 0.5);
+	border: 1px solid #969696;
+	border-radius: 4px;
+	box-shadow: inset 0px 0px 4px 1px black, 0px 0px 5px 2px black;}
+
+#backpack .itemslot .slot_number {
+	position: absolute;
+	z-index: 1;
+	left: -2px;
+	top: -6px;
+	padding: 2px;
+	background: #4a4a4a;
+	box-shadow: 0px 0px 1px 1px black;
+}
+
+#backpack .itemslot .item {
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	margin: 0;}
+
+
+/* Buttons */
+#backpack button {
+	cursor: pointer;
+	height: 52px;
+	width: 120px;
+	margin-top: 2px;
+	margin-right: 3px;
+	float: right;
+	border-radius: 5px;
+	font-size: 17px;
+	font-weight: bold;
+	color: #fff2e0;
+	border: 1px solid #969696;
+	background-color: rgba(241, 167, 64, 0.5);
+	background-image: none;
+	box-shadow: 0px 0px 5px 2px black;}
+
+#backpack button:hover {
+	filter: brightness(95%);}
+
+#backpack button:active {
+	box-shadow: inset 2px 2px 3px #000;}
+
+#backpack button:focus {
+	outline: 0;}
+
+#backpack button:disabled {
+	filter: grayscale(85%);
+	color: #1c1c1c;
+	cursor: default;}
+
+/*****************************************
+****************Game Themes***************
+*****************************************/
+/* Audiosurf */
+	body.series_3327 {
+		background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/gameseries/audiosurfbkg.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;}
+	.series_3327 #logo {
+		background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/gameseries/audiosurflogo.png') !important;
+		top: 50px;
+		border-bottom: none;
+		width: 1080px;
+		background-position: center;
+	}
+	.series_3327 #logo a {width: 1080px;}
+	.series_3327 #header {background: none;}
+	.series_3327 .clan_trophy img {height: 0px;}
+	.series_3327 h2 {color: #fff}
+	.series_3327 h2 a {color: #fff}
+	.series_3327 .linkbox a {color: #fff}
+
+	.series_3327 #menu ul a {color: #e8e8e8 !important;}
+	.series_3327 #menu ul a:hover {color: #3ACFF9 !important;}
+
+	.series_3327 .alertbar a {color: #fff !important}
+
+	.series_3327 #footer {background: rgba(5,10,20,0.85)}
+	.series_3327 #footer_image {height: 0px}
+
+/* Gumi */
+body.tgroup_9559 {
+		background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/gameseries/gumibkg.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;}
+	.tgroup_9559 #logo {
+		background-image: url('https://gazellegames.net/static/styles/blue_ambrose/images/gameseries/gumilogo.png') !important;
+		top: 50px;
+		border-bottom: none;
+		width: 1080px;
+		background-position: center;}
+
+	.tgroup_9559 #logo a {width: 1080px;}
+	.tgroup_9559 #header {background: none;}
+	.tgroup_9559 .clan_trophy img {height: 0px;}
+	.tgroup_9559 h2 {color: #fff}
+	.tgroup_9559 h2 a {color: #fff}
+	.tgroup_9559 .linkbox a {color: #fff}
+
+	.tgroup_9559 #menu ul, .tgroup_9559 #userinfo {
+		background: rgba(0,96,128,0.9);
+		border-radius: 20px;}
+	.tgroup_9559 #menu ul a {color: #e8e8e8 !important;}
+	.tgroup_9559 #menu ul a:hover {color: #3ACFF9 !important;}
+	.tgroup_9559 .main_column_bg, .tgroup_9559 .sidebar .box {background: rgba(0,96,128,0.9) !important}
+	.tgroup_9559 #main_column_top {background-image: none}
+
+	.tgroup_9559 .alertbar a {color: #fff !important;}
+	.tgroup_9559 #footer {background: rgba(0,96,128,0.7)}
+	.tgroup_9559 #footer_image {height: 0px}
+
+
+
+#crafting_panel .item .item_count,
+#trading_panel .item .item_count {
+	color: gold;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 6px #000;}
+
+/****************************************************
+******************** CALENDAR ***********************
+****************************************************/
+
+#calendar .main_column {
+     width: 100%;}
+
+table.calendar {
+     background-color: #1b2e40;
+     border: 1px solid #314f6d;
+     width: 95%;
+     margin: 0px auto 25px;}
+
+table.calendar td {
+     border: 1px solid #314f6d;}
+
+table.calendar td.calendar-day-np {
+     border: none;}
+
+td.calendar-day {
+     height: 100px;}
+
+.change_month_links {
+     float: right;
+     top: -28px;
+     position: relative;
+     font-size: 1.5em;
+     right: 5px;}
+
+.calendar-heading {
+     background-color: #314f6d;
+     text-align: center;
+     padding: 10px 0;}
+
+.month-picker-open-button {height: auto;}
+
+#calendar .ui-state-default {
+     background: transparent;
+     border: none;
+     filter: brightness(100);}
+
+#calendar .ui-button-icon-only .ui-icon {
+     margin-left: -11px;
+     margin-top: -11px;}
+
+#calendar td.calendar-day.today {
+     background-color: rgba(246, 255, 111, 0.1);}
+
+#calendar td.calendar-day:hover {
+     background-color: #314f6d;}
+
+td.calendar-day-np {
+     background: none;}
+
+#calendar div.day-number {
+     background-color: transparent;
+     font-size: 1.2em;
+     top: 8px;
+     right: 8px;
+     position: absolute;}
+
+#calendar .day-events p {
+     font-size: 1em;
+     font-weight: bold;
+     text-align: center;
+     padding: 5px;}
+
+#calendar .tooltipster-content p,
+#calendar .tooltipster-content strong {
+     font-size: 1em;
+     padding-left: 5px;}
+
+#calendar .tooltipster-default {
+     min-width: 350px;}
+
+#calendar .tooltipster-default .tooltipster-content {
+     font-weight: normal;
+     font-size: 14px;}
+
+#calendar td.label {text-align: left;}
+#calendar td.label hr, #calendar td.small_label hr {display: none;}
+
+.event_form_table td {
+    padding-top: 5px;}
+
+.event_form_table #body {
+     width: 100% !important;
+     height: 100px;
+     margin-left: 0px;}
+
+
+/***************************************************
+******************** CHANGELOG **********************
+****************************************************/
+
+#changelog tr.git_issue td { padding: 15px 0 15px 8px; }
+#changelog table tr.rowa > td { background-color: rgba(27, 47, 63, 0.75); }
+#changelog table tr.rowb > td { background-color: rgba(24, 59, 88, 0.75); }
+#changelog .git_issue .title { font-size: 1.1em; }
+#changelog .git_issue .sub_info { padding-top: 8px; }
+#changelog .git_issue .issue_title .sub_info {
+	margin-top: -8px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+#changelog .git_issue .opened_time {
+	margin-top: 8px;
+	margin-right: 1rem;
+}
+#changelog .git_issue .labels {
+	display: flex;
+	flex-wrap: wrap;
+}
+#changelog .git_issue .labels > a { margin-top: 8px; }
+#changelog .label_entity {
+	flex-grow: 1;
+	padding: 2px 6px 2px 6px;
+	margin: 4px;
+	border-radius: 10px;
+	white-space: nowrap;
+}
+#changelog .labels a:first-of-type .label_entity { margin-left: 0; }
+#changelog #labels_all span.label_entity { margin: 0; line-height: 2.5em; }
+
+#changelog h1#display_name { line-height: 2.5em; }
+#changelog .label_entity.closed {
+	color: #fff;
+	background-color: #1f78d1;
+	line-height: 2rem;
+	border-radius: 4px;
+}
+#changelog .label_entity.opened {
+	color: #fff;
+	background-color: #1aaa55;
+	line-height: 2rem;
+	border-radius: 4px;
+}
+#changelog .main_column_bg { min-height: 260px; }
+#changelog .main_column div.body {
+	margin: 0 20px;
+	padding: 1.5em;
+	color: white;
+	font-family: Verdana, Sans-serif;
+	font-size: 1.1em;
+}
+#changelog #main_column_top { background-image: none; }
+#changelog #main_column_bottom { background-image: none; }
+#changelog .main_column .body p {
+	padding: 5px 0px;
+	line-height: 1.5em;
+}
+#changelog .main_column .body ul { margin-left: 30px; }
+#changelog .sidebar .box { margin-left: -10px; }
+
+#changelog .issue_info li { line-height: 1.3rem; }
+#changelog .issues_labels ul > li {
+     display: inline-block;
+     margin-bottom: 8px;
+}
+#changelog #reply_box strong { font-size: 1.4em; }
+
+/***************************************************
+********************* MEDALS ***********************
+****************************************************/
+
+/* Managers */
+.medals_manager .wide_text {
+	width: 99%;}
+
+/* Users Medals Page */
+#users_medals {
+     background: rgba(0, 0, 0, 0.4);
+     border-radius: 15px;
+}
+#users_medals h2 {
+     margin-left: 1rem;
+}
+#users_medals .flextable {
+     width: 93%;
+     margin: 0 auto;
+}
+
+#users_medals .flextable-cell.medal_cell {
+     max-width: 25%;
+     max-height: 200px;
+     min-height: 60px;
+     z-index: 100;
+     position: relative;
+     text-align: center;
+}
+
+#users_medals .medal_name {
+     margin-bottom: 10px;
+}
+
+#users_medals .primary.medal_image_div {
+     position: relative;
+     height: 150px;
+     bottom: 10px;
+}
+#users_medals .primary.medal_image {
+     max-width: 150px;
+     max-height: 150px;
+     position: absolute;
+     bottom: 0;
+     right: 0; left: 0;
+     margin: auto;
+}
+#users_medals .medal_cell.inactive .medal_image {
+     opacity: 65%;
+}
+#users_medals .medal_cell.inactive .medal_name {
+     color: #ababab;
+}
+#users_medals .medal_image_div .drop_shadow {
+     width: 80px;
+     margin: 0 auto;
+     position: absolute;
+     bottom: -5px;
+     left:0; right: 0;
+     z-index: -1;
+     transform: scale(0.9);
+     box-shadow: 0 0 8px 2px #000000;
+}
+
+/* Medal Info Box - On hover */
+#users_medals .medal_info {
+     opacity: 0;
+     z-index: 101;
+     padding: 10px;
+     background: rgba(0, 0, 0, 0.5);
+     color: #fff;
+     border-radius: 10px;
+     overflow-wrap: break-word;
+     transition: opacity .5s;
+}
+
+#users_medals .medal_info .medal_name,
+#users_medals .medal_info .medal_image_div {
+     text-align: center;
+}
+
+#users_medals .medal_info .medal_image_div {
+     margin: 10px 0 10px 0;
+}
+#users_medals .medal_info img.medal_image {
+     max-width: 100px;
+     max-height: 100px;
+}
+#users_medals .medal_info .description_item { margin-bottom: 10px; }
+#users_medals .medal_info .description_item strong { padding-right: 2px; }
+
+#users_medals .medal_cell:hover .medal_info {
+     visibility: visible;
+     opacity: 1;
+     position: absolute;
+     top: 0; left: 0; right: 0; bottom: 0;
+     margin: auto;
+     display: block;
+     overflow-y: scroll;
+     overflow-x: hidden;
+     text-align: left
+}
+
+/* Hover animation */
+#users_medals .primary {
+     opacity: 1;
+     transition: opacity .2s;
+}
+#users_medals .medal_cell:hover .primary {
+     opacity: 0;
+}
+
+/* Style the shelf */
+#users_medals .flextable-cell.flex-shelf {
+     flex-grow: 4;
+     width: 100%;
+     position: relative;
+     top: -55px;
+}
+#users_medals .shelf {
+     position: relative;
+     border-bottom: 40px solid #463112;
+     border-left: 20px solid transparent;
+     border-right: 20px solid transparent;
+     z-index: 0;
+}
+#users_medals .shelf:after {
+     content: '';
+     background: #5f4928;
+     height: 10px;
+     width: calc(100% + 40px); 
+     /*IE9+*/
+     position: absolute;
+     top: 40px;
+     left: 0;
+     right: 0;
+     z-index: 1;
+     margin: 0 -20px;
+}
+
+@media all and (min-width: 701px) {
+     #users_medals .flextable-cell.medal_cell {
+         max-width: 25%;
+     }
+ }
+ 
+ @media all and (max-width: 700px) {
+     #users_medals .flextable-cell.medal_cell {
+          max-width: 50%;
+          width: 50%;
+      }
+      #users_medals .flex-shelf {
+           display: none;
+      }
+ }
+ 
+ @media all and (max-width: 500px) {
+     #users_medals .flextable-cell.medal_cell {
+          margin: auto;
+      }
+ }
+
+ iframe {max-width: 100%;}
+
+td a { word-break: break-all;}
+td a { word-break: break-all;}
+
+
+/*** Tag adding form ***/
+form#tag_add_form {
+    margin-top: 1em;
+    display: none;
+}
+a#tagging_rules {
+    float: left;
+    margin-top:1em;
+    font-size: smaller;
+}
+form#tag_add_form input[type="submit"] {
+    float: right;
+}
+#tags_add_toggle {
+    margin-top: 1em;
+    float: right;
+    font-size: smaller;
+}
+#tags_add_note {
+    font-size: smaller;
+    text-align: left;
+}
+
+/*Dieslrae - addition for fix #1: "Tags group is bunched up after tag system overhaul update" by Sturm */ 
+#group_tags .tag_type_header {
+    font-weight: bold; /* Makes tag headers bold for easier readability */
+}
+
+#group_tags .group_tag {
+    margin: 2px 0; /* Adds spacing between tags to improve usability */
+}
