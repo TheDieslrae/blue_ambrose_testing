@@ -317,7 +317,7 @@ input.input_tog {width: 65%;}
 	padding:3px 0;
 	text-align:center;}
 
-#stats #content .box {background-color #1d3145;}
+#stats #content .box {background-color: #1d3145;} /*Dieslrae fix #4 - missed colon causing... */
 
 .slides_container {width: 207px;}
 
