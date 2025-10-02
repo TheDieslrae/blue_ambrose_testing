@@ -5325,4 +5325,5 @@ form#tag_add_form input[type="submit"] {
 
 #group_tags .group_tag {
     margin: 2px 0; /* Adds spacing between tags to improve usability */
+	margin-left: 1px;
 }
