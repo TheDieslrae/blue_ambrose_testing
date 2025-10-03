@@ -1166,7 +1166,7 @@ table.forum_index {											/* Sets background of main forum page */
 
 #forums .user_title {
      display: block;}
-/*Dieslrae - subtraction for fix #4: "Forum page layout of userinfo_username area is different than other pages" by Dieslrae */ 
+/*Dieslrae - subtraction for fix #5: "Forum page layout of userinfo_username area is different than other pages" by Dieslrae */ 
 /*#forums .username {
      padding-right: 5px;}
 
