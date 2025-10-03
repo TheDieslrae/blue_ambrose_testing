@@ -1649,8 +1649,8 @@ tbody .r10, tbody .r20, tbody .r50, tbody .r99 {color:#bcd68c;}
 	background-position:center center;}
 
 .torrent_table tr.group_torrent td span, #torrent_table tr.group_torrent td span{
-	margin-left:18px;
-	color:#fff;}
+	margin-left:18px;}
+	/*color:#fff;}*/ /*Dieslrae - subtraction for fix #4: "version portion of torrent is different color than rest of text" by ggnwarlan */ 
 
 .torrent_table tr.group_torrent a, #torrent_table tr.group_torrent a{
 	color:white;
