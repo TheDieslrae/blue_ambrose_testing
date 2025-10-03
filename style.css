@@ -5319,10 +5319,10 @@ form#tag_add_form input[type="submit"] {
 }
 
 /*Dieslrae - addition for fix #1: "Tags group is bunched up after tag system overhaul update" by Sturm */ 
-#group_tags {padding: 3px 0px 10px 6px;}
+#group_tags, #add_tags_link {padding: 3px 0px 10px 6px;}
 
 #group_tags .tag_type_header {
     font-weight: bold; /* Makes tag headers bold for easier readability */
 }
 
-.theme_collections {padding: 3px 0px 10px 6px;}
+.theme_collections {padding: 3px 0px 10px 6px;} /* Dieslrae - Go ahead and match same spacing from tags -> theme collections since these don't inherit "class=body" like other sidebar boxes */
