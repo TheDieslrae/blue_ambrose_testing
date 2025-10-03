@@ -5323,6 +5323,4 @@ form#tag_add_form input[type="submit"] {
     font-weight: bold; /* Makes tag headers bold for easier readability */
 }
 
-#group_tags .group_tag {
-    margin: 2px 0; /* Adds spacing between tags to improve usability */
-}
+.box_tags {padding: 3px 0px 10px 6px;}
