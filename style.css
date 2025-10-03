@@ -1166,7 +1166,7 @@ table.forum_index {											/* Sets background of main forum page */
 
 #forums .user_title {
      display: block;}
-/*Dieslrae - subtraction for fix #5: "Forum page layout of userinfo_username area is different than other pages" by Dieslrae */ 
+/*Dieslrae - subtraction for fix #4: "Forum page layout of userinfo_username area is different than other pages" by Dieslrae */ 
 /*#forums .username {
      padding-right: 5px;}
 
@@ -1650,7 +1650,7 @@ tbody .r10, tbody .r20, tbody .r50, tbody .r99 {color:#bcd68c;}
 
 .torrent_table tr.group_torrent td span, #torrent_table tr.group_torrent td span{
 	margin-left:18px;}
-	/*color:#fff;}*/ /*Dieslrae - subtraction for fix #4: "version portion of torrent is different color than rest of text" by ggnwarlan */ 
+	/*color:#fff;}*/ /*Dieslrae - subtraction for fix #5: "version portion of torrent is different color than rest of text" by ggnwarlan */ 
 
 .torrent_table tr.group_torrent a, #torrent_table tr.group_torrent a{
 	color:white;
