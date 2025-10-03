@@ -2499,6 +2499,49 @@ td.cats_col {
      background: url("https://gazellegames.net/static/styles/blue_ambrose/images/crossn.png") no-repeat left center;}
 
 /****Image Gallery****/
+.gallery {
+	display: inline-block;}
+
+ .gallery_slot {
+ 	overflow: hidden;}
+
+ .gallery_main_slot {
+	text-align: center;
+	width: 100%;
+	max-height: 600px;}
+
+ .gallery_row {
+	padding: 0;
+	margin: auto;
+	position: relative;
+	width: 100%;
+	max-height: 150px;
+	white-space: nowrap;
+	overflow: hidden;}
+
+ .gallery_small_slot {
+	display: inline-block;
+	max-height: 80px;
+	margin: 1px;
+	overflow: hidden;}
+
+ .large_row .gallery_small_slot {
+	width: 23%;}
+
+ .small_row .gallery_small_slot {
+	width: 24%;
+	margin: 2px;}
+
+ .gallery_small_slot img {
+	display: block;
+	margin: 0 !important; 
+	padding: 0 !important;}
+
+ .gallery_small_slot.selected {
+	border: 1px solid #fff;
+	margin: 0;}
+
+/*
 .profile .box_art_gallery .gallery {
         margin-left: 3px;
         display: inline-block;}
@@ -2528,6 +2571,7 @@ td.cats_col {
 .profile .box_art_gallery .small_row .gallery_small_slot {width: 24%; margin: 3px;}
 .profile .gallery_small_slot img {display: block;}
 .profile .box_art_gallery .gallery_small_slot.selected {border: 1px solid white;}
+*/
 
 /* ******************************* */
 /* **********COLLECTIONS********** */
