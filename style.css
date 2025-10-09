@@ -1424,7 +1424,10 @@ tr.group:hover {background-color: rgba(24, 59, 88, 0.8);}
 /*#torrents #content .thin table tr:hover{background-color: rgba(24, 59, 88, 0.85);}*/
 #torrents #content .thin table td{border-left: none; border-right: none}
 
-#torrents #content .thin table td.label {background-color: rgba(24,59,88, 0.85);}
+#torrents #content .thin table td.label {
+	background-color: rgba(24,59,88, 0.85);
+	text-align: left; /*Dieslrae - fix #8: Left align header text for requests within a game group.*/
+}
 
 #torrents #autocomplete {										/* Browse page auto complete */
         position: absolute;
