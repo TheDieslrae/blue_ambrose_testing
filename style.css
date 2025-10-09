@@ -5326,3 +5326,9 @@ form#tag_add_form input[type="submit"] {
 #group_tags .tag_type_header {font-weight: bold;} /* Makes tag headers bold for easier readability */
 
 .theme_collections {padding: 3px 0px 10px 6px;} /* Match .body sidebar spacing for theme_collections */
+
+/*Dieslrae - addition for fix #7: "No spacing between the release date and the age rating in the header of a game's torrent page:"*/
+.group_rating { /*Added to match Game Room exactly.*/
+  margin-left: 0.5em;
+  font-size: 0.85em;
+}
